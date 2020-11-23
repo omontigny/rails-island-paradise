@@ -13,7 +13,7 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true, uniqueness: true, format: { with: /.*@.*\.([a-z]{2}[a-z]?)/ }
-  validates :password, :confirmation => true,
-                       :length => {:within => 8..40},
-                       :allow_blank => false
+  validates :password, confirmation: true,
+                       length: {minimum: 8},
+                       allow_blank: false
 end
