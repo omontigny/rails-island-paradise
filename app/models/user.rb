@@ -5,9 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   # Associations
-  has_many islands
-  has_many bookings
-  has_many islands through bookings
+  has_many :bookings
+  has_many :islands, through: :bookings
 
   # Validations
   validates :first_name, presence: true
