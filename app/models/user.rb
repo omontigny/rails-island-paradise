@@ -10,8 +10,8 @@ class User < ApplicationRecord
   has_many :reservations, through: :islands, source: :bookings # as owner - rename bookings as reservations - current_user.reservations
 
   # Validations
-  validates :first_name, presence: true
-  validates :last_name, presence: true
+  # validates :first_name, presence: true
+  # validates :last_name, presence: true
   validates :email, presence: true, uniqueness: true, format: { with: /.*@.*\.([a-z]{2}[a-z]?)/ }
   validates :password, confirmation: true,
                        length: {minimum: 8},
