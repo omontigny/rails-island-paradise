@@ -5,7 +5,6 @@ class Booking < ApplicationRecord
   validates :start_date, presence: true
   validates :end_date, presence: true
 
-  validates :nb_travelers
-  validates :total_price
-  t.string "status"
+  validates :nb_travelers, presence: true
+  validates :total_price, presence: true
 end
