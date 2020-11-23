@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2020_11_23_174358) do
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.bigint "renter_id", null: false
     t.bigint "island_id", null: false
     t.date "start_date"
     t.date "end_date"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2020_11_23_174358) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["island_id"], name: "index_bookings_on_island_id"
-    t.index ["user_id"], name: "index_bookings_on_user_id"
+    t.index ["renter_id"], name: "index_bookings_on_renter_id"
   end
 
   create_table "islands", force: :cascade do |t|
@@ -35,12 +35,12 @@ ActiveRecord::Schema.define(version: 2020_11_23_174358) do
     t.integer "capacity"
     t.string "ocean"
     t.string "country"
-    t.bigint "user_id", null: false
+    t.bigint "owner_id", null: false
     t.float "price_per_day"
     t.boolean "shark"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_islands_on_user_id"
+    t.index ["owner_id"], name: "index_islands_on_owner_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -58,6 +58,6 @@ ActiveRecord::Schema.define(version: 2020_11_23_174358) do
   end
 
   add_foreign_key "bookings", "islands"
-  add_foreign_key "bookings", "users"
-  add_foreign_key "islands", "users"
+  add_foreign_key "bookings", "users", column: "renter_id"
+  add_foreign_key "islands", "users", column: "owner_id"
 end

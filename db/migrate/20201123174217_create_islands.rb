@@ -6,7 +6,7 @@ class CreateIslands < ActiveRecord::Migration[6.0]
       t.integer :capacity
       t.string :ocean
       t.string :country
-      t.references :user, null: false, foreign_key: true
+      t.references :owner, null: false, foreign_key: {to_table: :users}
       t.float :price_per_day
       t.boolean :shark
 

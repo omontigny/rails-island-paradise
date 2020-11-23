@@ -1,7 +1,5 @@
 class Island < ApplicationRecord
-  belongs_to :user
+  belongs_to :owner, class_name: "User"
   has_many :bookings
 
-  # has_many :users through bookings
-  # alias_attribute :owner, :user
 end
