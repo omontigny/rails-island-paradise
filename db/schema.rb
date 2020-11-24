@@ -10,9 +10,54 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_11_23_174358) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "renter_id", null: false
+    t.bigint "island_id", null: false
+    t.date "start_date"
+    t.date "end_date"
+    t.integer "nb_travelers"
+    t.float "total_price"
+    t.string "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["island_id"], name: "index_bookings_on_island_id"
+    t.index ["renter_id"], name: "index_bookings_on_renter_id"
+  end
+
+  create_table "islands", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "capacity"
+    t.string "ocean"
+    t.string "country"
+    t.bigint "owner_id", null: false
+    t.float "price_per_day"
+    t.boolean "shark"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["owner_id"], name: "index_islands_on_owner_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "bookings", "islands"
+  add_foreign_key "bookings", "users", column: "renter_id"
+  add_foreign_key "islands", "users", column: "owner_id"
 end
