@@ -1,4 +1,6 @@
 class Booking < ApplicationRecord
+
+  # STATUS = %w[pending accepted refused]
   # associations
   belongs_to :renter, class_name: "User"
   belongs_to :island
@@ -9,5 +11,6 @@ class Booking < ApplicationRecord
 
   validates :nb_travelers, presence: true
   validates :total_price, presence: true
+  # validates :status, inclusion: { in: STATUS }
   validates :status, presence: true
 end

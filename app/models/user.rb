@@ -9,6 +9,9 @@ class User < ApplicationRecord
   has_many :islands,  foreign_key: :owner_id # as owner - current_user.islands
   has_many :reservations, through: :islands, source: :bookings # as owner - rename bookings as reservations - current_user.reservations
 
+  # ActiveStorage
+  has_one_attached :avatar
+
   # Validations
   # validates :first_name, presence: true
   # validates :last_name, presence: true

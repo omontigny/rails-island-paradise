@@ -10,5 +10,5 @@ class Island < ApplicationRecord
   validates :ocean, presence: true
   validates :country, presence: true
   validates :price_per_day, presence: true
-  validates :shark, presence: true
+  validates_inclusion_of :shark, in: [true, false]
 end
