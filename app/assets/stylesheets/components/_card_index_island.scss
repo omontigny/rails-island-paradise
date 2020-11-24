@@ -1,0 +1,42 @@
+.card-index-island {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 200px;
+  margin: 10px;
+  width: 45%;
+}
+
+.card-index-island > img {
+  object-fit: cover;
+  height: 140px;
+  width: 100%;
+}
+
+.card-index-island h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-index-island p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-index-island .card-index-island-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-index-island-infos .card-index-island-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
