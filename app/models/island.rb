@@ -3,6 +3,9 @@ class Island < ApplicationRecord
   belongs_to :owner, class_name: "User"
   has_many :bookings
 
+  # ActiveStorage
+  has_one_attached :picture
+
   # Validations
   validates :name, presence: true, uniqueness: true
   validates :description, presence: true
