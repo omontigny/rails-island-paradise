@@ -6,9 +6,9 @@ class Island < ApplicationRecord
   # Validations
   validates :name, presence: true, uniqueness: true
   validates :description, presence: true
-  validates :capacity, presence: true, default: 1
+  validates :capacity, presence: true
   validates :ocean, presence: true
   validates :country, presence: true
   validates :price_per_day, presence: true
-  validates :shark, presence: true, default: false
+  validates :shark, presence: true
 end
