@@ -62,50 +62,49 @@ puts "User #{olivier.first_name} created"
 
 # Islands
 # Heart-shaped Island : Fiji (-17.858052,177.20179) Atlantic Ocean
-heart = Island.new(name: "Heart Island", description: "Beautiful island in shape of heart in Fidji. Perfect for honeymoon.", capacity: 2, ocean: "Atlantic Ocean", country: "Fidji", price_per_day: 200, shark: true)
+heart = Island.new(name: "Heart Island", location: 'Heart Island fidji', description: "Beautiful island in shape of heart in Fidji. Perfect for honeymoon.", capacity: 2, ocean: "Atlantic Ocean", country: "Fidji", price_per_day: 35_000, shark: true)
 file = File.open(Rails.root.join('db/fixtures/islands/heart.jpg'))
 heart.picture.attach(io: file, filename: 'heart.jpg', content_type: 'image/jpg')
-# heart.address('Heart Island fidji')
 heart.owner = coralie
 heart.save!
 puts "Island #{heart.name} created"
 
 sleep 0.5
 # Ko Rang Yai Island: Thailand (7.955642,98.446528) (Indian Ocean) - OK
-rangyai = Island.new(name: "Ko Rang Yai Island", description: "Koh Rang Yai is a peaceful island about 5 km off the east coast of Phuket(Thailand), you can enjoy water sports (including sea kayaking) or sunbathe in the afternoons. Adventurous travellers can find pretty good snorkelling near the headland rocks.", capacity: 2, ocean: "Indian ocean", country: "Thailand", price_per_day: 70, shark: false)
+rangyai = Island.new(name: "Ko Rang Yai Island", location: 'Ko Rang Yai Island', description: "Koh Rang Yai is a peaceful island about 5 km off the east coast of Phuket(Thailand), you can enjoy water sports (including sea kayaking) or sunbathe in the afternoons. Adventurous travellers can find pretty good snorkelling near the headland rocks.", capacity: 2, ocean: "Indian ocean", country: "Thailand", price_per_day: 70_000, shark: false)
 file = File.open(Rails.root.join('db/fixtures/islands/rangyai.jpg'))
 rangyai.picture.attach(io: file, filename: 'rangyai.jpg', content_type: 'image/jpg')
-# rangyai.address('Ko Rang Yai Island')
+# rangyai.location('Ko Rang Yai Island')
 rangyai.owner = coralie
 rangyai.save!
 puts "Island #{rangyai.name} created"
 
 sleep 0.5
 # whitsunday-islands (-20.1189023,148.9134288)(Australia) (coral Sea) - OK
-whitsunday = Island.new(name: "whitsunday Islands", description: "The Whitsunday Islands are a located off the coast of Queensland, Australia. Known for their beautiful surroundings, Whitehaven beach is one of the most well known beaches in Australia.", capacity: 2, ocean: "Coral Sea", country: "Australia", price_per_day: 70, shark: false)
+whitsunday = Island.new(name: "whitsunday Islands", location: 'whitsunday-islands', description: "The Whitsunday Islands are a located off the coast of Queensland, Australia. Known for their beautiful surroundings, Whitehaven beach is one of the most well known beaches in Australia.", capacity: 2, ocean: "Coral Sea", country: "Australia", price_per_day: 53_500, shark: false)
 file = File.open(Rails.root.join('db/fixtures/islands/whitsunday.jpg'))
 whitsunday.picture.attach(io: file, filename: 'whitsunday.jpg', content_type: 'image/jpg')
-# whitsunday.address('whitsunday-islands')
+# whitsunday.location('whitsunday-islands')
 whitsunday.owner = mickael
 whitsunday.save!
 puts "Island #{whitsunday.name} created"
 
 sleep 0.5
 # ShelterIsland (Lake County, Montana, United States of America (47.84144172763476,-114.21063619580997) OK
-shelterIsland = Island.new(name: "Shelter Island Castle", description: "One of the most expensive homes in Montana perched on its own private island, if you want to leave unforgettable experience, Go there now!", capacity: 2, ocean: "Indian ocean", country: "United States", price_per_day: 70, shark: false)
+shelterIsland = Island.new(name: "Shelter Island Castle", location: 'Lake County, Montana', description: "One of the most expensive homes in Montana perched on its own private island, if you want to leave unforgettable experience, Go there now!", capacity: 2, ocean: "Indian ocean", country: "United States", price_per_day: 48_235, shark: false)
 file = File.open(Rails.root.join('db/fixtures/islands/shelterIsland.jpg'))
 shelterIsland.picture.attach(io: file, filename: 'shelterIsland.jpg', content_type: 'image/jpg')
-# shelterIsland.address('Lake County, Montana')
+# shelterIsland.location('Lake County, Montana')
 shelterIsland.owner = mickael
 shelterIsland.save!
 puts "Island #{shelterIsland.name} created"
 
 sleep 0.5
 # BlueIsland (Bahamas) (25.04082,-77.37122) (Mer des caraibes)
-blueIsland = Island.new(name: "Blue Island", description: "You need a private jet to reach this incredible site. This fabulous island, home to three miles of treasured coastline and glistening beaches, features elevations up to 100 feet", capacity: 1, ocean: "Carribean Sea", country: "Bahamas", price_per_day: 50, shark: true)
+blueIsland = Island.new(name: "Blue Island", location: 'Bozine Town Road, Bahamas', description: "You need a private jet to reach this incredible site. This fabulous island, home to three miles of treasured coastline and glistening beaches, features elevations up to 100 feet", capacity: 1, ocean: "Carribean Sea", country: "Bahamas", price_per_day: 64_000, shark: true)
 file = File.open(Rails.root.join('db/fixtures/islands/blueIsland.jpg'))
 blueIsland.picture.attach(io: file, filename: 'blueIsland.jpg', content_type: 'image/jpg')
-# blueIsland.address('Bozine Town Road, Bahamas')
+# blueIsland.location('Bozine Town Road, Bahamas')
 blueIsland.owner= coralie
 blueIsland.save!
 puts "Island #{blueIsland.name} created"
@@ -113,19 +112,20 @@ puts "Island #{blueIsland.name} created"
 sleep 0.5
 
 #Half Moon Cay, Cat Island, Bahamas (24.5770593, -75.9232759) (Mer des caraibes)
-halfMoon = Island.new(name: "Half Moon Cay", description: "When people think of the Caribbean, they often overlook one of its most gorgeous regions—the Bay Islands of the Southwestern Caribbean. The island is full equiped because also features a dock, a newly constructed helipad, several storerooms, a workshop and a freight elevator", capacity: 1, ocean: "Carribean Sea", country: "Bahamas", price_per_day: 50, shark: true)
+halfMoon = Island.new(name: "Half Moon Cay", location: 'Half Moon Cay, Cat Island, Bahamas', description: "When people think of the Caribbean, they often overlook one of its most gorgeous regions—the Bay Islands of the Southwestern Caribbean. The island is full equiped because also features a dock, a newly constructed helipad, several storerooms, a workshop and a freight elevator", capacity: 1, ocean: "Carribean Sea", country: "Bahamas", price_per_day: 50_000, shark: true)
 file = File.open(Rails.root.join('db/fixtures/islands/halfMoon.jpg'))
 halfMoon.picture.attach(io: file, filename: 'halfMoon.jpg', content_type: 'image/jpg')
-# halfMoon.address('Half Moon Cay, Cat Island, Bahamas')
+# halfMoon.location('Half Moon Cay, Cat Island, Bahamas')
 halfMoon.owner= mickael
 halfMoon.save!
 puts "Island #{halfMoon.name} created"
 
 sleep 0.5
 
-roc = Island.new(name: "The Roc", description: "This island is perfect for people who wants to spend some time alone to better know themselves and discover the meaning of life.", capacity: 1, ocean: "Pacific ocean", country: "Indonesia", price_per_day: 50, shark: true)
+roc = Island.new(name: "The Roc", location: 'porquerolles, france', description: "This island is perfect for people who wants to spend some time alone to better know themselves and discover the meaning of life.", capacity: 1, ocean: "Pacific ocean", country: "Indonesia", price_per_day: 23_500, shark: true)
 file = File.open(Rails.root.join('db/fixtures/islands/roc.jpg'))
 roc.picture.attach(io: file, filename: 'roc.jpg', content_type: 'image/jpg')
+# halfMoon.location('Half Moon Cay, Cat Island, Bahamas')
 roc.owner= coralie
 roc.save!
 puts "Island #{roc.name} created"
@@ -137,7 +137,7 @@ puts "Island #{roc.name} created"
 # maple.save!
 # puts "Island #{maple.name} created"
 
-hygge = Island.new(name: "Hygge", description: "If you love to meditate, this island if for you. The sunrise is absolutely gorgeous and will allow you to find the peace your searching for.", capacity: 6, ocean: "Norway sea", country: "Norway", price_per_day: 60, shark: false)
+hygge = Island.new(name: "Hygge", location: 'Ile of Paques', description: "If you love to meditate, this island if for you. The sunrise is absolutely gorgeous and will allow you to find the peace your searching for.", capacity: 6, ocean: "Norway sea", country: "Norway", price_per_day: 18_750, shark: false)
 file = File.open(Rails.root.join('db/fixtures/islands/hygge.jpg'))
 hygge.picture.attach(io: file, filename: 'hygge.jpg', content_type: 'hygge/jpg')
 hygge.owner = mickael
@@ -151,7 +151,7 @@ puts "Island #{hygge.name} created"
 # ko.save!
 # puts "Island #{ko.name} created"
 
-narval = Island.new(name: "Narval", description: "You want to live the best holiday ever ? Come to the Narval Island. The beaches are beautiful and the water is always warm.  You won't have a day without sun. It is the perfect place for pure leasure and relaxation." , capacity: 6, ocean: "Carribean sea", country: "Puerto Rico", price_per_day: 250, shark: true)
+narval = Island.new(name: "Narval", location: 'Pasyon Seychelles', description: "You want to live the best holiday ever ? Come to the Narval Island. The beaches are beautiful and the water is always warm.  You won't have a day without sun. It is the perfect place for pure leasure and relaxation." , capacity: 6, ocean: "Carribean sea", country: "Seychelles", price_per_day: 72_000, shark: true)
 file = File.open(Rails.root.join('db/fixtures/islands/narval.jpg'))
 narval.picture.attach(io: file, filename: 'narval.jpg', content_type: 'narval/jpg')
 narval.owner = coralie
@@ -165,12 +165,12 @@ puts "Island #{narval.name} created"
 # winty.save!
 # puts "Island #{winty.name} created"
 
-macdo = Island.new(name: "MacDonney Island", description: "The MacDonney Island is a well furnished island. Indeed you will also have access to the haunted castle present on the island. Thrill and adventure guaranteed !", capacity: 5, ocean: "North sea", country: "Scotland", price_per_day: 175, shark: false)
-file = File.open(Rails.root.join('db/fixtures/islands/macdo.jpg'))
-macdo.picture.attach(io: file, filename: 'macdo.jpg', content_type: 'macdo/jpg')
-macdo.owner = coralie
-macdo.save!
-puts "Island #{macdo.name} created"
+# macdo = Island.new(name: "MacDonney Island", description: "The MacDonney Island is a well furnished island. Indeed you will also have access to the haunted castle present on the island. Thrill and adventure guaranteed !", capacity: 5, ocean: "North sea", country: "Scotland", price_per_day: 175, shark: false)
+# file = File.open(Rails.root.join('db/fixtures/islands/macdo.jpg'))
+# macdo.picture.attach(io: file, filename: 'macdo.jpg', content_type: 'macdo/jpg')
+# macdo.owner = coralie
+# macdo.save!
+# puts "Island #{macdo.name} created"
 
 
 firstb = Booking.new(start_date: "13/03/2021", end_date: "20/03/2021", nb_travelers: 3, total_price: 1400, status: "refused")
@@ -186,8 +186,8 @@ secondb.save!
 puts "Booking #{secondb.id} created"
 
 thirdb = Booking.new(start_date: "23/08/2021", end_date: "31/08/2021", nb_travelers: 5, total_price: 2700)
-thirdb.renter=kevin
-thirdb.island= narval
+thirdb.renter = kevin
+thirdb.island = narval
 thirdb.save!
 puts "Booking #{thirdb.id} created"
 

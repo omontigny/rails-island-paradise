@@ -25,11 +25,11 @@
 //   color: #D23333;
 // }
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
+// @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
 
-* {
-  font-family: Open Sans;
-}
+// * {
+//   font-family: Open Sans;
+// }
 
 // section {
 //   width: 100%;
@@ -43,6 +43,9 @@
 // }
 
 .footer-distributed{
+  position: static ;
+  bottom: 0;
+  width: 100vw;
   background: #666;
   background: rgba(34, 177, 169,0.7);
 

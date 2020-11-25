@@ -1,9 +1,8 @@
 <div class="container_home">
       <h1>Choose your islands</h1>
   <div class="row">
-    <div class="col-lg-6 col-md-6 col-sm-12">
 
-
+      <%= link_to island_path(island) do %>
       <% @islands.each do | island | %>
       <%# <div><% link_to island_path, class="card-index-island" %>
         <div class="card-index-island">
@@ -26,11 +25,18 @@
         </div>
       </div>
       <% end %>
-      <%# ------ %>
+      <% end %>
    </div>
 
     <div class="col-lg-6 col-md-6">
-      <img id="map-island-index" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoiaGFyeW9zIiwiYSI6ImNraDZkcnY5dTAwejMycmwzNWkyY3oxZG4ifQ.HEoss9bdaBYpjGpQs5gRLg'>
+    <h1>Map</h1>
+      <!-- <img id="map-island-index" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoiaGFyeW9zIiwiYSI6ImNraDZkcnY5dTAwejMycmwzNWkyY3oxZG4ifQ.HEoss9bdaBYpjGpQs5gRLg'>
+      <script src=‘https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js’></script> -->
+      <div id="map-island-index"
+        style="width: 100%; height: 600px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
     </div>
 
   </div>
