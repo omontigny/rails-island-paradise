@@ -11,10 +11,12 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
 @import 'mapbox-gl/dist/mapbox-gl';
 
 /* In the "external libraries" section */
 // @import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder';
+@import "pages/index_booking";
 
 body{
   //background-image: linear-gradient(rgba(179, 242, 240, 0.2), rgba(255, 255, 255, 0.9)), url("layout/background_island.jpg");

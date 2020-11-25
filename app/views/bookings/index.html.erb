@@ -1,0 +1,23 @@
+
+<div class="status">
+  <% @bookings.each do |booking| %>
+    <div class="<%= booking.status %>">
+      <div class="island_name">
+        <%= booking.island.name %>
+      </div>
+      <div class="status">
+        BOOKING STATUS : <%= booking.status %>
+      </div>
+      <div class="dates">
+        Island book from <%= booking.start_date %> to <%= booking.end_date %>
+      </div>
+      <div class="nb_travelers">
+        Number of travelers: <%= booking.nb_travelers %>
+      </div>
+      <div class="price">
+        Total Price: <%= booking.total_price %>$
+      </div>
+    </div>
+  <% end %>
+</div>
+

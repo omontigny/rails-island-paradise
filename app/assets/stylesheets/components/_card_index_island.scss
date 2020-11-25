@@ -2,14 +2,15 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  height: 280px;
-  margin: 10px;
-  width: 45%;
+  height: 450px;
+  margin-bottom: 20px;
+  width: 100%;
+  position: relative;
 }
 
 .card-index-island > img {
   object-fit: cover;
-  height: 180px;
+  height: 350px;
   width: 100%;
 }
 
@@ -34,9 +35,32 @@
   position: relative;
 }
 
-.card-index-island-infos .card-index-island-user {
+.card-index-island-infos .card-index-island-capacity {
   position: absolute;
   right: 16px;
-  top: -20px;
+  top: 10px;
   width: 40px;
+}
+
+h1 {
+font-family: "Shrikhand";
+}
+
+.card-index-island .favori-index-island {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: rgba(0,0,0,0.2);
+}
+
+.card-index-island .favori-index-island:active {
+  background-color: green;
+}
+
+.card-index-island .favori-index-island:focus {
+  background-color: red;
 }
