@@ -168,32 +168,32 @@ puts "Island #{narval.name} created"
 macdo = Island.new(name: "MacDonney Island", description: "The MacDonney Island is a well furnished island. Indeed you will also have access to the haunted castle present on the island. Thrill and adventure guaranteed !", capacity: 5, ocean: "North sea", country: "Scotland", price_per_day: 175, shark: false)
 file = File.open(Rails.root.join('db/fixtures/islands/macdo.jpg'))
 macdo.picture.attach(io: file, filename: 'macdo.jpg', content_type: 'macdo/jpg')
-macdo.owner=coralie
+macdo.owner = coralie
 macdo.save!
 puts "Island #{macdo.name} created"
 
 
 firstb = Booking.new(start_date: "13/03/2021", end_date: "20/03/2021", nb_travelers: 3, total_price: 1400, status: "refused")
 firstb.renter=kevin
-firstb.island= heart
+firstb.island = heart
 firstb.save!
 puts "Booking #{firstb.id} created"
 
 secondb = Booking.new(start_date: "13/07/2021", end_date: "20/07/2021", nb_travelers: 2, total_price: 490, status: "accepted")
-secondb.renter=olivier
-secondb.island= cliff
+secondb.renter = olivier
+secondb.island = halfMoon
 secondb.save!
 puts "Booking #{secondb.id} created"
 
 thirdb = Booking.new(start_date: "23/08/2021", end_date: "31/08/2021", nb_travelers: 5, total_price: 2700)
 thirdb.renter=kevin
-thirdb.island= ko
+thirdb.island= narval
 thirdb.save!
 puts "Booking #{thirdb.id} created"
 
 fourthb = Booking.new(start_date: "25/01/2021", end_date: "28/01/2021", nb_travelers: 4, total_price: 700)
-fourthb.renter=kevin
-fourthb.island= macdo
+fourthb.renter = kevin
+fourthb.island = shelterIsland
 fourthb.save!
 puts "Booking #{fourthb.id} created"
 
