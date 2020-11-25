@@ -44,7 +44,7 @@ const initMapbox = () => {
       style: 'mapbox://styles/mapbox/streets-v10',
       //style: 'mapbox://styles/mapbox/sattelite-v9'
       minZoom: 2,
-      maxZoom: 12,
+      maxZoom: 13,
     });
 
     const markers = JSON.parse(mapElement.dataset.markers);

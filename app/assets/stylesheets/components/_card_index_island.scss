@@ -8,6 +8,8 @@
   position: relative;
 }
 
+
+
 .card-index-island > img {
   object-fit: cover;
   height: 350px;
@@ -33,6 +35,9 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  a:hover{
+      text-decoration: none;
+  }
 }
 
 .card-index-island-infos .card-index-island-capacity {
