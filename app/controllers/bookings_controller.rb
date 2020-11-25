@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.all
+    @bookings = current_user.bookings
   end
 
   def new
@@ -12,7 +12,9 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @island = Island.find(params[:island_id])
     @booking.island = @island
-    @booking.save
+    @booking.renter = current_user
+    @booking.total_price = ((@booking.end_date - @booking.start_date).to_f) * @island.price_per_day
+    @booking.save!
     redirect_to bookings_path
   end
 
