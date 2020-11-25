@@ -43,7 +43,8 @@ const initMapbox = () => {
       container: 'map-island-index',
       style: 'mapbox://styles/mapbox/streets-v10',
       //style: 'mapbox://styles/mapbox/sattelite-v9'
-      zoom: 13,
+      minZoom: 2,
+      maxZoom: 12,
     });
 
     const markers = JSON.parse(mapElement.dataset.markers);

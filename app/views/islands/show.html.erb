@@ -1,19 +1,17 @@
 <div class="container_home">
   <div class="row">
     <div class="col-lg-8 col-md-6 col-sm-12">
-      <h1>My Island </h1>
+      <h1><%= @island.name %> </h1>
       <%= cl_image_tag @island.picture.key,  width: 700, crop: :fill %>
-      <div class="d-flex justify-content-between">
+      <!-- <div class="d-flex justify-content-between"> -->
         <div class="p-3">
-          <h2> <%= @island.name %></h2>
+          <!-- <h2> <%= @island.name %></h2> -->
         </div>
-        <div class="p-3">
+        <div class="p-4">
           <h4><%= @island.price_per_day %>€ / day</h4>
         </div>
-      </div>
-      <p><%= @island.description %></p>
-      <p>book from day month year to day month year for x people<br>
-      cost x €</p>
+<!--       </div> -->
+       <p><%= @island.description %></p>
       <button type="button" class="btn btn-success">
         <%= link_to "Book this island", new_island_booking_path(@island) %>
       </button>
@@ -24,7 +22,6 @@
         <%# ------ %>
 
       <div class="col-lg-4 col-md-6">
-      <h1>Map</h1>
       <!-- <img id="map-island-index" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoiaGFyeW9zIiwiYSI6ImNraDZkcnY5dTAwejMycmwzNWkyY3oxZG4ifQ.HEoss9bdaBYpjGpQs5gRLg'>
       <script src=‘https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js’></script> -->
       <div id="map-island-index"
