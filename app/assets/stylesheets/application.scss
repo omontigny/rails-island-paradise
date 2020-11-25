@@ -11,13 +11,17 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import 'mapbox-gl/dist/mapbox-gl';
+
+/* In the "external libraries" section */
+// @import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder';
 
 body{
   //background-image: linear-gradient(rgba(179, 242, 240, 0.2), rgba(255, 255, 255, 0.9)), url("layout/background_island.jpg");
   //background-image: linear-gradient(rgba(118, 242, 238, 0.5), rgba(255, 255, 255, 0.9)), url("layout/background_palmtree.jpg");
-  background-image: linear-gradient(rgba(118, 242, 238, 0.5), rgba(255, 255, 255, 0.9)), url("layout/background_beach.jpg");
-
-  background-size: cover;
+  //background-image: linear-gradient(rgba(118, 242, 238, 0.5), rgba(255, 255, 255, 0.9)), url("layout/background_beach.jpg");
+  background: linear-gradient(rgba(118, 242, 238, 0.5), rgba(255, 255, 255, 0.9))
+  // background-size: cover;
   // height: 100vh;
   // background-color: #a0bfd6;
 }

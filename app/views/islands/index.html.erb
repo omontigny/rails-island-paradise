@@ -4,26 +4,39 @@
       <h1>All islands</h1>
       <div class = "d-flex flex-wrap">
         <% @islands.each do | island | %>
+        <%= link_to island_path(island) do %>
         <div class="card-index-island">
+
           <%= cl_image_tag island.picture.key  %>
           <!-- <img src="https://source.unsplash.com/featured/?island,paradise" /> -->
+
           <div class="card-index-island-infos">
             <div>
-              <h2> <%= island.name %></h2>
+              <h2> <%= island.name %> - <%= island.id %></h2>
               <p> description</p>
             </div>
             <h2 class="card-trip-pricing">price</h2>
+
             <%= cl_image_tag island.owner.avatar.key, class: "card-index-island-user avatar-bordered"  %>
             <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-index-island-user avatar-bordered" /> -->
+
           </div>
+
         </div>
+<% end %>
         <% end %>
         <%# ------ %>
       </div>
     </div>
     <div class="col-lg-4 col-md-6">
       <h1>Map</h1>
-      <img id="map-island-index" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoiaGFyeW9zIiwiYSI6ImNraDZkcnY5dTAwejMycmwzNWkyY3oxZG4ifQ.HEoss9bdaBYpjGpQs5gRLg'>
+      <!-- <img id="map-island-index" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoiaGFyeW9zIiwiYSI6ImNraDZkcnY5dTAwejMycmwzNWkyY3oxZG4ifQ.HEoss9bdaBYpjGpQs5gRLg'>
+      <script src=‘https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js’></script> -->
+      <div id="map-island-index"
+        style="width: 100%; height: 600px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
     </div>
 
   </div>
