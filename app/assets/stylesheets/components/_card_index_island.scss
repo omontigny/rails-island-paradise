@@ -2,14 +2,14 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  height: 200px;
+  height: 280px;
   margin: 10px;
   width: 45%;
 }
 
 .card-index-island > img {
   object-fit: cover;
-  height: 140px;
+  height: 180px;
   width: 100%;
 }
 
@@ -39,4 +39,12 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+#map-island-index {
+/*  flex-grow: 1;*/
+  height: 100vh;
+  margin-right: 15px;
+  position: sticky;
+  top: 10px;
 }

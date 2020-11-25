@@ -12,13 +12,23 @@
 @import "components/index";
 @import "pages/index";
 
+body{
+  //background-image: linear-gradient(rgba(179, 242, 240, 0.2), rgba(255, 255, 255, 0.9)), url("layout/background_island.jpg");
+  //background-image: linear-gradient(rgba(118, 242, 238, 0.5), rgba(255, 255, 255, 0.9)), url("layout/background_palmtree.jpg");
+  background-image: linear-gradient(rgba(118, 242, 238, 0.5), rgba(255, 255, 255, 0.9)), url("layout/background_beach.jpg");
 
-.container{
-  //border: 1px solid black;
-  // display: flex;
-
-  color: black;
-  font-size: 18px;
-  text-align: center;
-  margin-top: 50px;
+  background-size: cover;
+  // height: 100vh;
+  // background-color: #a0bfd6;
 }
+
+
+// .container{
+//   // border: 1px solid black;
+//   // display: flex;
+//   // height: 75vh;
+//   color: black;
+//   font-size: 18px;
+//   text-align: center;
+//   margin-top: 50px;
+// }
