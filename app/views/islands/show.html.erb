@@ -1,25 +1,26 @@
-<div class="container_home">
+<div class="show_island">
 
-  <button type="button" class="btn btn-success">
-    <%= link_to "Back", islands_path %>
+<button type="button" class="btn btn-light">
+    <%= link_to "< Back to all Islands", islands_path %>
   </button>
+
+<div class="" style="background-image: url('<%= cl_image_path @island.picture.key %>'); background-size: cover;height: 30vh;">
+</div>
+
+<div class="container_home">
 
   <div class="row">
     <div class="col-lg-8 col-md-6 col-sm-12">
       <h1><%= @island.name %> </h1>
-      <%= cl_image_tag @island.picture.key,  width: 700, crop: :fill %>
-      <!-- <div class="d-flex justify-content-between"> -->
-        <div class="p-3">
-          <!-- <h2> <%= @island.name %></h2> -->
-        </div>
-        <div class="p-4">
-          <h4><%= @island.price_per_day.to_i %>€ / day</h4>
-        </div>
-
-       <p><%= @island.description %></p>
 
 
-<%= render "bookings/new", island: @island, booking: @booking %>
+
+
+
+       <p style ="font-size: 15px;"><%= @island.description %></p>
+
+
+        <%= render "bookings/new", island: @island, booking: @booking %>
 
 
 
@@ -39,5 +40,8 @@
   </div>
 </div>
 
+</div>
 
-
+<button type="button" class="btn btn-light">
+    <%= link_to "< Back to all Islands", islands_path %>
+</button>

@@ -28,8 +28,12 @@ require("turbolinks").start()
 
 // External imports
 import "bootstrap";
+import "../plugins/flatpickr";
+import "../plugins/moment";
 import { initMapbox } from '../plugins/init_mapbox';
+import { totalPriceCalculation } from '../components/total_price_calculation';
 import { initSelect2 } from '../plugins/init_select2';
+
 
 // Internal imports, e.g:
 //import { initSelect2 } from '../components/init_select2';
@@ -40,3 +44,4 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
 });
 
+totalPriceCalculation();
