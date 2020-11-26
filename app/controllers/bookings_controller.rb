@@ -1,6 +1,8 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = current_user.bookings
+    @bookings_pending = current_user.bookings.order(:status, :start_date).where(status: "pending")
+    @bookings_accepted = current_user.bookings.order(:status, :start_date).where(status: "accepted")
+    @bookings_refused = current_user.bookings.order(:status, :start_date).where(status: "refused")
   end
 
   def new
