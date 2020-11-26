@@ -22,7 +22,7 @@
                 <%# <i class="fas fa-bookmark"></i> %>
                 <div class="price-capacity-index">
                   <h2 class="card-index-island-capacity"> <span><i class="fas fa-hotel"></i></span> <%=  island.capacity %><span> Housing</span></h2>
-                  <h2 class="card-trip-pricing">$ <%= island.price_per_day.to_s(:delimited) %> <span> / Day</span> </h2>
+                  <h2 class="card-trip-pricing">$ <%= island.price_per_day.to_i.to_s(:delimited) %> <span> / Day</span> </h2>
                   <% if island.shark %>
                   <%= image_tag "layout/shark.png", class: "shark-image" %>
                   <% end %>

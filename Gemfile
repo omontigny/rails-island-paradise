@@ -35,6 +35,7 @@ gem 'devise'
 gem 'cloudinary', '~> 1.16.0'
 gem 'geocoder'
 gem 'country_select'
+gem 'select2-rails'
 
 group :development, :test do
   gem 'pry-byebug'
