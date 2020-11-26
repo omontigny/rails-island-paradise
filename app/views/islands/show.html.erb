@@ -1,4 +1,9 @@
 <div class="container_home">
+
+  <button type="button" class="btn btn-success">
+    <%= link_to "Back", islands_path %>
+  </button>
+
   <div class="row">
     <div class="col-lg-8 col-md-6 col-sm-12">
       <h1><%= @island.name %> </h1>
@@ -8,33 +13,31 @@
           <!-- <h2> <%= @island.name %></h2> -->
         </div>
         <div class="p-4">
-          <h4><%= @island.price_per_day %>€ / day</h4>
+          <h4><%= @island.price_per_day.to_i %>€ / day</h4>
         </div>
-<!--       </div> -->
+
        <p><%= @island.description %></p>
-      <button type="button" class="btn btn-success">
-        <%= link_to "Book this island", new_island_booking_path(@island) %>
-      </button>
-      <button type="button" class="btn btn-success">
-        <%= link_to "Back", islands_path %>
-      </button>
+
+
+<%= render "bookings/new", island: @island, booking: @booking %>
+
+
+
         </div>
         <%# ------ %>
 
       <div class="col-lg-4 col-md-6">
       <!-- <img id="map-island-index" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoiaGFyeW9zIiwiYSI6ImNraDZkcnY5dTAwejMycmwzNWkyY3oxZG4ifQ.HEoss9bdaBYpjGpQs5gRLg'>
       <script src=‘https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js’></script> -->
+      <!-- OK -->
       <div id="map-island-index"
         style="width: 100%; height: 600px;"
         data-markers="<%= @marker.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>">
       </div>
     </div>
-      </div>
-    </div>
-
-
   </div>
 </div>
+
 
 

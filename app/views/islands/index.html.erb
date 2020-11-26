@@ -1,15 +1,18 @@
 <div class="container_home">
 
+
   <h1>Choose your islands</h1>
 
   <div class="row">
     <div class="col-lg-6 col-md-6">
 
       <% @islands.each do | island | %>
+
         <%= link_to island_path(island) do %>
 
           <div class="card-index-island">
-            <%= cl_image_tag island.picture.key, class: "index-island-image" %>
+
+              <%= cl_image_tag island.picture.key, class: "index-island-image" %>
 
             <div class="information-index-cards">
               <div class="card-index-island-infos">
@@ -26,6 +29,7 @@
                 </div>
               </div>
             </div>
+
           </div>
         <% end %>
       <% end %>

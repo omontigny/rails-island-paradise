@@ -10,16 +10,16 @@
 }
 
 .btn-ghost:hover {
-  opacity: 1;
+  opacity: 0.3;
 }
 
 .btn-flat {
-  color: white;
-  font-size: 18px;
-  //font-weight: bold;
-  padding: 10px 20px;
+  color: #4A4A4A;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 15px 20px;
   border-radius: 10px;
-  background: #4F5D75;
+  background: $turquoise;
   opacity: 0.8;
   transition: background 0.3s ease;
 }
@@ -29,9 +29,10 @@
 }
 
 .btn-flat:hover {
-    background: #4F5D75;
-    opacity: 0.9;
-    color: white;
+    background: $turquoise;
+    // background: $turquoise-transparent;
+    opacity: 1;
+    color: #4A4A4A;
 }
 
 .btn-gradient {
