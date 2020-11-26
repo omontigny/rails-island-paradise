@@ -1,24 +1,25 @@
 
-<div class="status">
-  <% @bookings.each do |booking| %>
-    <div class="<%= booking.status %>">
+<%= link_to "back", islands_path %>
+
+<% @bookings.each do |booking| %>
+  <div class="card-product">
+    <%= cl_image_tag booking.island.picture.key %>
+    <div class="card-product-infos">
+      <span class="status">
+        <%= booking.status.upcase %>
+      </span>
       <div class="island_name">
-        <%= booking.island.name %>
-      </div>
-      <div class="status">
-        BOOKING STATUS : <%= booking.status %>
-      </div>
-      <div class="dates">
-        Island book from <%= booking.start_date %> to <%= booking.end_date %>
-      </div>
-      <div class="nb_travelers">
-        Number of travelers: <%= booking.nb_travelers %>
+        <%= link_to booking.island.name, island_path(booking.island) %>
       </div>
       <div class="price">
-        Total Price: <%= booking.total_price %>$
+        <strong>$<%= booking.total_price.to_i.to_s(:delimited) %></strong> for <%= (booking.end_date - booking.start_date).to_i %> nights
+      </div>
+      <div class="dates">
+        from <strong><%= booking.start_date %></strong> to <strong><%= booking.end_date %></strong>
       </div>
     </div>
-  <% end %>
-  <%= link_to "back", islands_path %>
-</div>
+  </div>
+<% end %>
+
+
 

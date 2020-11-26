@@ -1,0 +1,38 @@
+.card-product {
+  overflow: hidden;
+  height: auto;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  width: 600px;
+  margin-bottom:30px;
+  margin-left: 30px;
+}
+
+.card-product img {
+  height: 100%;
+  width: 300px;
+  object-fit: cover;
+  padding: 5px;
+}
+
+.island_name {
+  font-size: 16px;
+  // font-weight: bold;
+  margin-top: 15px;
+}
+
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+.status {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-weight: lighter;
+}
+
