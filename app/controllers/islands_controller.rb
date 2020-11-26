@@ -7,8 +7,10 @@ class IslandsController < ApplicationController
     @markers = @islands.map do |island|
       {
         lat: island.latitude,
-        lng: island.longitude
-      }
+        lng: island.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { island: island }),
+        image_url: helpers.asset_url("map-marker.png")
+    }
     end
   end
 
@@ -19,12 +21,14 @@ class IslandsController < ApplicationController
     @marker[0] =
     {
         lat: @island.latitude,
-        lng: @island.longitude
+        lng: @island.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { island: @island }),
+        image_url: helpers.asset_url("map-marker.png")
     }
   end
 
   # def new
-  #   @island = island.new
+  #   @island = Island.new
   # end
 
   # def create
@@ -49,7 +53,6 @@ class IslandsController < ApplicationController
     @booking.save
     redirect_to bookings_path
   end
-
 
   private
 

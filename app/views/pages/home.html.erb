@@ -1,8 +1,14 @@
 <div class="banner_home" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://source.unsplash.com/featured/?island,paradise');)">
    <div class="container_home">
-     <h1>Gorgeous Island to rent </h1>
-         <p><strong>Looking for a private island? Find your dreaming place</strong> here 💪</p>
+
+     <h1>Gorgeous Islands to rent </h1>
+         <p><strong>Looking for a private island? <br>
+         Find your dreaming place</strong> here</p>
          <%= link_to "~ BROWSE ~ Our Rental Islands", islands_path, class: "btn btn-flat" %>
+         <%= link_to "~ ADD ~ Your Island", new_owner_island_path, class: "btn btn-flat" %>
+         <%= link_to "~ SEE ~ My Bookings", owner_bookings_path, class: "btn btn-flat" %>
+         <%= link_to "~ SEE ~ My Islands", owner_islands_path, class: "btn btn-flat" %>
+
      </div>
 </div>
 
@@ -13,13 +19,13 @@
         Top Islands
       </div>
       <div class="cards">
-        <div class="card-category shadow m-2 text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),url('<%= image_path("islands/narval.jpg")%>');">
+        <div class="card-category shadow m-2" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.2)),url('<%= image_path("islands/narval.jpg")%>');">
           <p>Narval</p>
         </div>
-        <div class="card-category shadow m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),url('<%= image_path("islands/whitsunday.jpg")%>');">
+        <div class="card-category shadow m-2" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)),url('<%= image_path("islands/whitsunday.jpg")%>');">
           <p>Whitsundays</p>
         </div>
-        <div class="card-category shadow m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),url('<%= image_path("islands/heart.jpg")%>');">
+        <div class="card-category shadow m-2" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)),url('<%= image_path("islands/heart.jpg")%>');">
           <p>Heart</p>
         </div>
       </div>

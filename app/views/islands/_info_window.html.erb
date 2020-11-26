@@ -1,4 +1,4 @@
-<!-- app/views/flats/_info_window.html.erb -->
-
-<h2><%= island.name %></h2>
-<p><%= island.location %></p>
+<!-- app/views/islands/_info_window.html.erb -->
+<%= cl_image_tag island.picture.key, width: 200, crop: :fill %>
+<h3><%= island.name %></h3>
+<p><%= island.country %></p>

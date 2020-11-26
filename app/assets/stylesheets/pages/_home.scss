@@ -3,18 +3,22 @@
   // border: 1px solid black;
   // display: flex;
   // height: 75vh;
-  color: black;
-  font-size: 18px;
+  // color: black;
+  font-size: 36px;
   text-align: center;
   margin-top: 50px;
   margin-bottom: 100px;
   margin-left: 50px;
   margin-right: 50px;
+  > p{
+    //  font-size: 28px;
+     font: normal 32px 'Open Sans', cursive;
+  }
 }
 
 .home-title{
   font-family: "Shrikhand";
-  color: black;
+  // color: black;
   font-size: 48px;
   text-align: center;
 }
