@@ -16,6 +16,7 @@ class IslandsController < ApplicationController
 
   def show
     set_island
+         @booking = Booking.new
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @marker = []
     @marker[0] =

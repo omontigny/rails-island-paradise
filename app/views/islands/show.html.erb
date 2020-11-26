@@ -1,4 +1,9 @@
 <div class="container_home">
+
+  <button type="button" class="btn btn-success">
+    <%= link_to "Back", islands_path %>
+  </button>
+
   <div class="row">
     <div class="col-lg-8 col-md-6 col-sm-12">
       <h1><%= @island.name %> </h1>
@@ -10,14 +15,14 @@
         <div class="p-4">
           <h4><%= @island.price_per_day.to_i %>€ / day</h4>
         </div>
-<!--       </div> -->
+
        <p><%= @island.description %></p>
-      <button type="button" class="btn btn-success">
-        <%= link_to "Book this island", new_island_booking_path(@island) %>
-      </button>
-      <button type="button" class="btn btn-success">
-        <%= link_to "Back", islands_path %>
-      </button>
+
+
+<%= render "bookings/new", island: @island, booking: @booking %>
+
+
+
         </div>
         <%# ------ %>
 
