@@ -34,6 +34,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'cloudinary', '~> 1.16.0'
 gem 'geocoder'
+gem 'country_select'
 
 group :development, :test do
   gem 'pry-byebug'

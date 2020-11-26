@@ -47,13 +47,13 @@ class IslandsController < ApplicationController
   #   @booking = Booking.new
   # end
 
-  def create
-    @booking = Booking.new(booking_params)
-    set_island
-    @booking.island = @island
-    @booking.save
-    redirect_to bookings_path
-  end
+  # def create
+  #   @booking = Booking.new(booking_params)
+  #   set_island
+  #   @booking.island = @island
+  #   @booking.save
+  #   redirect_to bookings_path
+  # end
 
   private
 
