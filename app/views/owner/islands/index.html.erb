@@ -1,0 +1,11 @@
+<h1>Owner islands</h1>
+<%= link_to "Back", root_path, class: "btn btn-ghost" %>
+<br>
+<div class="containrer">
+<% if @islands.empty?  %>
+  You have <%= @islands.count %> Islands please create one <br>
+  <%= link_to "~ ADD ~ Your Island", new_owner_island_path, class: "btn btn-ghost" %>
+  <% end %>
+  <br>
+</div>
+

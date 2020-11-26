@@ -1,0 +1,11 @@
+<h1> All My bookings </h1>
+<%= link_to "Back", root_path, class: "btn btn-ghost" %>
+<br>
+<div class="containrer">
+<% if @bookings.empty?  %>
+  You have <%= @bookings.count %> bookings <br>
+  <% end %>
+  <br>
+</div>
+
+
