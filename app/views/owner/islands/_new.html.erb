@@ -1,0 +1,14 @@
+
+<%= simple_form_for [ :owner, @island ] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :ocean %>
+    <%= f.input :location %>
+    <%= f.input :country, input_html: { class: 'select2' }%>
+    <%= f.input :price_per_day %>
+    <%= f.input :shark %>
+    <%= f.input :picture %>
+    <%= f.submit "Add", class: "btn btn-ghost" %>
+   <% end %>
+
+

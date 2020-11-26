@@ -1,11 +1,42 @@
-<h1>Owner islands</h1>
 <%= link_to "Back", root_path, class: "btn btn-ghost" %>
 <br>
-<div class="containrer">
-<% if @islands.empty?  %>
-  You have <%= @islands.count %> Islands please create one <br>
-  <%= link_to "~ ADD ~ Your Island", new_owner_island_path, class: "btn btn-ghost" %>
-  <% end %>
-  <br>
-</div>
+<%= link_to "~ ADD ~ Your Island", new_owner_island_path, class: "btn btn-ghost" %>
+You have <%= @islands.count %> Islands please create one
+<br>
+<div class="container border">
+  <div class="row" style="text-decoration:none">
+    <div class="col-lg-6 col-md-6">
+      <h1>All my Islands</h1>
+      <% @islands.each do | island | %>
+        <%= link_to island_path(island) do %>
+        <%# <div><% link_to island_path, class="card-index-island" %>
+          <div class="card-index-island">
+          <%= cl_image_tag island.picture.key, width: 800, crop: :fill %>
+          <%# <img src="./assets/images/layout/palm-tree-2.svg" alt="" style="height:20px; width:20px;"> %>
+          <%= image_tag "layout/palm-tree-2.svg", class:"favori-index-island button" %>
+          <!-- <img src="https://source.unsplash.com/featured/?island,paradise" /> -->
 
+          <div class="card-index-island-infos">
+            <div>
+              <h2> <%= island.name %></h2>
+              <p><%= island.ocean %></p>
+              <p><%= island.country %></p>
+              <%# <%= link_to "More info", island_path %>
+            </div>
+
+              <h2 class="card-index-island-capacity fas fa-user-friends"> <%=  island.capacity %></h2>
+            <h2 class="card-trip-pricing"><%= island.price_per_day.to_i %>$ / day </h2>
+            <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-index-island-user avatar-bordered" /> -->
+          </div>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+      <div class="col-lg-6 col-md-6">
+        <h1>Creation Form</h1>
+        <div class="row" style="text-decoration:none">
+          <%= render 'new' %>
+        </div>
+      </div>
+  </div>
+</div>
