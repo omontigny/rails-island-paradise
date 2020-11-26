@@ -1,14 +1,11 @@
 .card-index-island {
-  overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  height: 450px;
-  margin-bottom: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  height: 350px;
+  margin-bottom: 30px;
   width: 100%;
   position: relative;
 }
-
-
 
 .card-index-island > img {
   object-fit: cover;
@@ -16,56 +13,91 @@
   width: 100%;
 }
 
+
 .card-index-island h2 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   margin: 0;
 }
 
 .card-index-island p {
-  font-size: 12px;
+  font-size: 16px;
   opacity: .7;
   margin: 0;
 }
 
-
 .card-index-island .card-index-island-infos {
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
-  a:hover{
-      text-decoration: none;
-  }
+  color: black;
 }
 
 .card-index-island-infos .card-index-island-capacity {
-  position: absolute;
-  right: 16px;
-  top: 10px;
-  width: 40px;
+  font-size: 16px;
+  span {
+    font-size: 14px;
+    opacity: .7;
+    margin: auto;
+  }
+}
+
+.card-index-island-infos .card-trip-pricing {
+  font-size: 16px;
+  span {
+    font-size: 14px;
+    opacity: .7;
+    margin: auto;
+  }
 }
 
 h1 {
-font-family: "Shrikhand";
+  font-family: "Shrikhand";
+  margin-bottom: 20px;
 }
 
-.card-index-island .favori-index-island {
-  height: 40px;
+// .card-index-island .favori-index-island {
+  //   height: 40px;
+  //   width: 40px;
+  //   position: absolute;
+  //   right: 10px;
+  //   top: 10px;
+//   background-color: white;
+//   border-radius: 50%;
+//   box-shadow: rgba(0,0,0,0.2);
+// }
+
+.index-island-image {
+  position: relative;
+  background-position: center;
+}
+
+.information-index-cards {
+background-color: white;
+position: absolute;
+bottom: 10px;
+left: 18%;
+width: 60%;
+height: 30%;
+display: none;
+box-shadow: 0 0 15px rgba(0,0,0,0.4);
+text-align: center;
+padding-top: 10px;
+transition: 1s;
+opacity: 0.7;
+}
+
+.card-index-island:hover {
+  color: black;
+  .information-index-cards{
+    display: block;
+  }
+}
+
+.price-capacity-index{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.shark-image {
   width: 40px;
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  background-color: white;
-  border-radius: 50%;
-  box-shadow: rgba(0,0,0,0.2);
-}
-
-.card-index-island .favori-index-island:active {
-  background-color: green;
-}
-
-.card-index-island .favori-index-island:focus {
-  background-color: red;
+  height: 40px;
 }

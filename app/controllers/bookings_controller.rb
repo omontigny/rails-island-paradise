@@ -1,6 +1,8 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = current_user.bookings
+    @bookings_pending = current_user.bookings.order(:status, :start_date).where(status: "pending")
+    @bookings_accepted = current_user.bookings.order(:status, :start_date).where(status: "accepted")
+    @bookings_refused = current_user.bookings.order(:status, :start_date).where(status: "refused")
   end
 
   def new
@@ -14,8 +16,11 @@ class BookingsController < ApplicationController
     @booking.island = @island
     @booking.renter = current_user
     @booking.total_price = ((@booking.end_date - @booking.start_date).to_f) * @island.price_per_day
-    @booking.save
-    redirect_to bookings_path
+    if @booking.save
+      redirect_to bookings_path
+    else
+      render "islands/show"
+    end
   end
 
   private
