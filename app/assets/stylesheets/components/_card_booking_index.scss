@@ -5,9 +5,10 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  width: 600px;
+  width: 700px;
   margin-bottom:30px;
   margin-left: 30px;
+  border-radius:2px;
 }
 
 .card-product img {
@@ -23,14 +24,51 @@
   margin-top: 15px;
 }
 
+.island_name a {
+  text-decoration: none;
+  color: black;
+}
+
+.island_name a:hover {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.price {
+  padding-top:10px;
+  padding-bottom:10px;
+}
+
+.dates {
+  padding-bottom: 10px;
+}
 
 .card-product .card-product-infos {
   padding: 16px;
 }
 
-.status {
-  color: #4A4A4A;
-  border: 1px solid #4A4A4A;
+.status_pending {
+  background-color:#f9edc7;
+  color: #66351F;
+  border: 1px solid #f9edc7;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-weight: lighter;
+}
+
+.status_accepted {
+  background-color:#d2f0cd;
+  color: #375533;
+  border: 1px solid #d2f0cd;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-weight: lighter;
+}
+
+.status_refused {
+  background-color:#FADFE0;
+  color: #6F2323;
+  border: 1px solid #FADFE0;
   padding: 4px 12px;
   border-radius: 50px;
   font-weight: lighter;
