@@ -1,11 +1,44 @@
 <h1>Owner islands</h1>
+
 <%= link_to "Back", root_path, class: "btn btn-ghost" %>
 <br>
-<div class="containrer">
-<% if @islands.empty?  %>
-  You have <%= @islands.count %> Islands please create one <br>
-  <%= link_to "~ ADD ~ Your Island", new_owner_island_path, class: "btn btn-ghost" %>
-  <% end %>
-  <br>
-</div>
 
+<div class="container_home">
+  <% if @islands.empty?  %>
+    You have <%= @islands.count %> Islands please create one <br>
+    <%= link_to "~ ADD ~ Your Island", new_owner_island_path, class: "btn btn-ghost" %>
+    <% end %>
+    <br>
+
+  <div class="row">
+    <div class="col-lg-6 col-md-6">
+
+      <% @islands.each do | island | %>
+        <%= link_to island_path(island) do %>
+
+          <div class="card-index-island">
+
+            <%= cl_image_tag island.picture.key, class: "index-island-image" %>
+
+            <div class="information-index-cards">
+              <div class="card-index-island-infos">
+                <h2> <%= island.name %></h2>
+                <p><%= island.ocean %>, <%= island.country %></p>
+
+                <%# <i class="fas fa-bookmark"></i> %>
+                <div class="price-capacity-index">
+                  <h2 class="card-index-island-capacity"> <span><i class="fas fa-hotel"></i></span> <%=  island.capacity %><span> Housing</span></h2>
+                  <h2 class="card-trip-pricing">$ <%= island.price_per_day.to_s(:delimited) %> <span> / Day</span> </h2>
+                  <% if island.shark %>
+                  <%= image_tag "layout/shark.png", class: "shark-image" %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
