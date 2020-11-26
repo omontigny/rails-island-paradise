@@ -1,12 +1,12 @@
 <div class="container_home">
-      <h1>Choose your islands</h1>
+      <h1>Choose your next Island</h1>
   <div class="row" style="text-decoration:none">
       <div class="col-lg-6 col-md-6">
         <% @islands.each do | island | %>
         <%= link_to island_path(island) do %>
         <%# <div><% link_to island_path, class="card-index-island" %>
           <div class="card-index-island">
-          <%= cl_image_tag island.picture.key %>
+          <%= cl_image_tag island.picture.key, width: 800, crop: :fill %>
           <%# <img src="./assets/images/layout/palm-tree-2.svg" alt="" style="height:20px; width:20px;"> %>
           <%= image_tag "layout/palm-tree-2.svg", class:"favori-index-island button" %>
           <!-- <img src="https://source.unsplash.com/featured/?island,paradise" /> -->
@@ -20,7 +20,7 @@
             </div>
 
               <h2 class="card-index-island-capacity fas fa-user-friends"> <%=  island.capacity %></h2>
-            <h2 class="card-trip-pricing"><%= island.price_per_day %> $ / night </h2>
+            <h2 class="card-trip-pricing"><%= island.price_per_day.to_i %>$ / day </h2>
             <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-index-island-user avatar-bordered" /> -->
           </div>
         </div>
