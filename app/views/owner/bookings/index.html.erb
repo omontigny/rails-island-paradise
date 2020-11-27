@@ -6,7 +6,7 @@
   <div style="height:60vh">
   <h1 class="text-center">My Reservations</h1>
   <% @bookings_pending.each do |booking| %>
-    <div class="card-product">
+    <div class="card-product-owner">
       <%= cl_image_tag booking.island.picture.key %>
       <div class="card-product-infos">
           <span class="status_pending">
@@ -39,7 +39,7 @@
 
 
   <% @bookings_accepted.each do |booking| %>
-    <div class="card-product">
+    <div class="card-product-owner">
       <%= cl_image_tag booking.island.picture.key %>
       <div class="card-product-infos">
           <span class="status_accepted">
@@ -59,7 +59,7 @@
   <% end %>
 
   <% @bookings_refused.each do |booking| %>
-    <div class="card-product">
+    <div class="card-product-owner">
       <%= cl_image_tag booking.island.picture.key %>
       <div class="card-product-infos">
           <span class="status_refused">

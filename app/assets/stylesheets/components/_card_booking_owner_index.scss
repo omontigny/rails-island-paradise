@@ -9,106 +9,104 @@
   margin-bottom:30px;
   margin-left: 30px;
   border-radius:2px;
+
+  img {
+    height: 100%;
+    width: 300px;
+    object-fit: cover;
+    padding: 5px;
+  }
+
+  .island_name {
+    font-size: 16px;
+    // font-weight: bold;
+    margin-top: 15px;
+  }
+
+  .island_name a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .island_name a:hover {
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .price {
+    padding-top:10px;
+    padding-bottom:10px;
+  }
+
+  .dates {
+    padding-bottom: 10px;
+  }
+
+  .card-product-infos {
+    padding: 16px;
+  }
+
+  .status_pending {
+    background-color:#f9edc7;
+    color: #66351F;
+    border: 1px solid #f9edc7;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-weight: lighter;
+  }
+
+  .status_accepted {
+    background-color:#d2f0cd;
+    color: #375533;
+    border: 1px solid #d2f0cd;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-weight: lighter;
+  }
+
+  .status_refused {
+    background-color:#FADFE0;
+    color: #6F2323;
+    border: 1px solid #FADFE0;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-weight: lighter;
+    text-decoration: none;
+  }
+
+  .btn-approved {
+    border-radius: 50%;
+    color: white;
+    background-color: #D2F0CD;
+    border: 1px solid #D2F0CD;
+    margin: 10px;
+    padding: 6px 10px 6px 10px;
+  }
+
+  .btn-approved:hover {
+    background-color: #51AC48;
+    border: 1px solid #51AC48;
+
+  }
+
+  .btn-declined {
+    border-radius: 50%;
+    color: white;
+    background-color: #FADFE0;
+    border: 1px solid #FADFE0;
+    margin: 10px;
+    padding: 6px 13px 6px 13px;
+  }
+
+  .btn-declined:hover {
+    background-color: #DC4245;
+    border: 1px solid #DC4245;
+    text-decoration: none;
+  }
+
+  i {
+    text-decoration:none;
+    color:white;
+  }
+
 }
-
-.card-product-owner img {
-  height: 100%;
-  width: 300px;
-  object-fit: cover;
-  padding: 5px;
-}
-
-.island_name {
-  font-size: 16px;
-  // font-weight: bold;
-  margin-top: 15px;
-}
-
-.island_name a {
-  text-decoration: none;
-  color: black;
-}
-
-.island_name a:hover {
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.price {
-  padding-top:10px;
-  padding-bottom:10px;
-}
-
-.dates {
-  padding-bottom: 10px;
-}
-
-.card-product-owner .card-product-infos {
-  padding: 16px;
-}
-
-.status_pending {
-  background-color:#f9edc7;
-  color: #66351F;
-  border: 1px solid #f9edc7;
-  padding: 4px 12px;
-  border-radius: 50px;
-  font-weight: lighter;
-}
-
-.status_accepted {
-  background-color:#d2f0cd;
-  color: #375533;
-  border: 1px solid #d2f0cd;
-  padding: 4px 12px;
-  border-radius: 50px;
-  font-weight: lighter;
-}
-
-.status_refused {
-  background-color:#FADFE0;
-  color: #6F2323;
-  border: 1px solid #FADFE0;
-  padding: 4px 12px;
-  border-radius: 50px;
-  font-weight: lighter;
-  text-decoration: none;
-}
-
-.btn-approved {
-  border-radius: 50%;
-  color: white;
-  background-color: #D2F0CD;
-  border: 1px solid #D2F0CD;
-  margin: 10px;
-  padding: 6px 10px 6px 10px;
-}
-
-.btn-approved:hover {
-  background-color: #51AC48;
-  border: 1px solid #51AC48;
-
-}
-
-.btn-declined {
-  border-radius: 50%;
-  color: white;
-  background-color: #FADFE0;
-  border: 1px solid #FADFE0;
-  margin: 10px;
-  padding: 6px 13px 6px 13px;
-}
-
-.btn-declined:hover {
-  background-color: #DC4245;
-  border: 1px solid #DC4245;
-  text-decoration: none;
-}
-
-i {
-  text-decoration:none;
-  color:white;
-}
-
-
-
