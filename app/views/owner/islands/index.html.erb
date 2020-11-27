@@ -7,28 +7,34 @@
   </div>
   <% if @islands.empty?  %>
     You have <%= @islands.count %> Islands please create one <br>
-    <%= link_to "~ ADD ~ Your Island", new_owner_island_path, class: "btn btn-ghost" %>
+    <%#= link_to "~ ADD ~ Your Island", new_owner_island_path, class: "btn btn-ghost" %>
     <% end %>
     <br>
 
   <div class="row">
     <div class="col-lg-6 col-md-6">
       <% @islands.each do | island | %>
+
+
         <%= link_to island_path(island) do %>
 
           <div class="card-index-island">
+
+          <div class="card-category-icon">
+            <%= link_to owner_island_path(island),
+              method: :delete,
+              data: { confirm: "Are you sure?" } do %>
+              <i class="fas fa-trash-alt"></i>
+            <% end %>
+          </div>
 
             <%= cl_image_tag island.picture.key, class: "index-island-image" %>
 
 <!--              <%= link_to owner_island_path(island) do %>
             <i id="pen" class="card-category-icon fa fa-pen"></i>
             <% end %>
+-->
 
-            <%= link_to owner_islands_path(island),
-              method: :delete,
-              data: { confirm: "Are you sure?" } do %>
-              <i class="card-category-icon fas fa-trash-alt"></i>
-            <% end %> -->
 
             <div class="information-index-cards">
               <div class="card-index-island-infos">
@@ -45,9 +51,11 @@
                 </div>
               </div>
             </div>
-
           </div>
+
         <% end %>
+
+
       <% end %>
     </div>
     <div class="col-lg-6 col-md-6">

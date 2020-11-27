@@ -36,6 +36,8 @@ import { initSelect2 } from '../plugins/init_select2';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 
 
+
+
 // Internal imports, e.g:
 //import { initSelect2 } from '../components/init_select2';
 
@@ -47,6 +49,10 @@ document.addEventListener('turbolinks:load', () => {
   const urlIndex = 'mapbox://styles/oliver498/ckhxzcik207l119rzwfttqb5i';
   initMapbox('map-island-index',urlIndex,0,0,12);
   initMapbox('map-island-show',urlShow,2,0,10);
+  initFlatpickr();
   totalPriceCalculation();
+
 });
+
+
 
