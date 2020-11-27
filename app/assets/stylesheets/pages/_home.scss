@@ -6,7 +6,7 @@
   // color: black;
   font-size: 36px;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 100px;
   margin-bottom: 100px;
   margin-left: 65px;
   margin-right: 65px;
@@ -14,14 +14,23 @@
     //  font-size: 28px;
      font: normal 32px 'Open Sans', cursive;
   }
-    > h2{
+  > h2{
     //  font-size: 28px;
      font: bold 36px 'Open Sans', cursive;
   }
 
+  #title {
+  font-family: "Shrikhand";
+  color: white;
+  font-size: 70px;
+  text-align: center;
+  }
+
 }
 
-.home-title{
+
+
+.home-title {
   font-family: "Shrikhand";
   // color: black;
   font-size: 48px;

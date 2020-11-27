@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   # as owner
   namespace :owner do
-    resources :islands, only: [:index, :new, :create, :update]
+    resources :islands, only: [:index, :new, :create, :update, :destroy]
     resources :bookings, only: [:index] do
       member do
         patch :accept
@@ -21,8 +21,5 @@ Rails.application.routes.draw do
       end
     end
   end
-
-
-  resources :islands, only: [:destroy]
 
 end
