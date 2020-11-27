@@ -1,80 +1,84 @@
 <!-- My Reservations -->
 <div class="space" style="height:50px"></div>
-<div class="container_home"></div>
   <%= link_to "Back", root_path, class: "btn btn-ghost" %>
   <br>
   <div style="height:60vh">
   <h1 class="text-center">My Reservations</h1>
-  <% @bookings_pending.each do |booking| %>
-    <div class="card-product-owner">
-      <%= cl_image_tag booking.island.picture.key %>
-      <div class="card-product-infos">
-          <span class="status_pending">
-            <%= booking.status.capitalize %>
-          </span>
-        <div class="island_name">
-          <%= link_to booking.island.name, island_path(booking.island) %>
+  <div class="row">
+    <div class="col-6">
+      <% @bookings_pending.each do |booking| %>
+        <div class="card-product-owner">
+          <%= cl_image_tag booking.island.picture.key %>
+          <div class="card-product-infos">
+              <span class="status_pending">
+                <%= booking.status.capitalize %>
+              </span>
+            <div class="island_name">
+              <%= link_to booking.island.name, island_path(booking.island) %>
+            </div>
+            <div class="price">
+              <strong>$<%= booking.total_price.to_i.to_s(:delimited) %></strong> for <%= (booking.end_date - booking.start_date).to_i %> nights
+            </div>
+            <div class="dates">
+              from <strong><%= booking.start_date %></strong> to <strong><%= booking.end_date %></strong>
+            </div>
+            <div class="validation">
+                <button class="btn-approved" type="button">
+                  <%= link_to accept_owner_booking_path(booking), method: :patch do %>
+                    <i class="fas fa-check"></i>
+                  <% end %>
+                </button>
+                <button class="btn-declined" type="button">
+                  <%= link_to refuse_owner_booking_path(booking), method: :patch do %>
+                    <i class="fas fa-times"></i>
+                  <% end %>
+                </button>
+            </div>
+          </div>
         </div>
-        <div class="price">
-          <strong>$<%= booking.total_price.to_i.to_s(:delimited) %></strong> for <%= (booking.end_date - booking.start_date).to_i %> nights
-        </div>
-        <div class="dates">
-          from <strong><%= booking.start_date %></strong> to <strong><%= booking.end_date %></strong>
-        </div>
-        <div class="validation">
-            <button class="btn-approved" type="button">
-              <%= link_to accept_owner_booking_path(booking), method: :patch do %>
-                <i class="fas fa-check"></i>
-              <% end %>
-            </button>
-            <button class="btn-declined" type="button">
-              <%= link_to refuse_owner_booking_path(booking), method: :patch do %>
-                <i class="fas fa-times"></i>
-              <% end %>
-            </button>
-        </div>
-      </div>
+      <% end %>
     </div>
-  <% end %>
 
+    <div class="col-6">
+      <% @bookings_accepted.each do |booking| %>
+        <div class="card-product-owner">
+          <%= cl_image_tag booking.island.picture.key %>
+          <div class="card-product-infos">
+              <span class="status_accepted">
+                <%= booking.status.capitalize %>
+              </span>
+            <div class="island_name">
+              <%= link_to booking.island.name, island_path(booking.island) %>
+            </div>
+            <div class="price">
+              <strong>$<%= booking.total_price.to_i.to_s(:delimited) %></strong> for <%= (booking.end_date - booking.start_date).to_i %> nights
+            </div>
+            <div class="dates">
+              from <strong><%= booking.start_date %></strong> to <strong><%= booking.end_date %></strong>
+            </div>
+          </div>
+        </div>
+      <% end %>
 
-  <% @bookings_accepted.each do |booking| %>
-    <div class="card-product-owner">
-      <%= cl_image_tag booking.island.picture.key %>
-      <div class="card-product-infos">
-          <span class="status_accepted">
-            <%= booking.status.capitalize %>
-          </span>
-        <div class="island_name">
-          <%= link_to booking.island.name, island_path(booking.island) %>
+      <% @bookings_refused.each do |booking| %>
+        <div class="card-product-owner">
+          <%= cl_image_tag booking.island.picture.key %>
+          <div class="card-product-infos">
+              <span class="status_refused">
+                <%= booking.status.capitalize %>
+              </span>
+            <div class="island_name">
+              <%= link_to booking.island.name, island_path(booking.island) %>
+            </div>
+            <div class="price">
+              <strong>$<%= booking.total_price.to_i.to_s(:delimited) %></strong> for <%= (booking.end_date - booking.start_date).to_i %> nights
+            </div>
+            <div class="dates">
+              from <strong><%= booking.start_date %></strong> to <strong><%= booking.end_date %></strong>
+            </div>
+          </div>
         </div>
-        <div class="price">
-          <strong>$<%= booking.total_price.to_i.to_s(:delimited) %></strong> for <%= (booking.end_date - booking.start_date).to_i %> nights
-        </div>
-        <div class="dates">
-          from <strong><%= booking.start_date %></strong> to <strong><%= booking.end_date %></strong>
-        </div>
-      </div>
+      <% end %>
     </div>
-  <% end %>
-
-  <% @bookings_refused.each do |booking| %>
-    <div class="card-product-owner">
-      <%= cl_image_tag booking.island.picture.key %>
-      <div class="card-product-infos">
-          <span class="status_refused">
-            <%= booking.status.capitalize %>
-          </span>
-        <div class="island_name">
-          <%= link_to booking.island.name, island_path(booking.island) %>
-        </div>
-        <div class="price">
-          <strong>$<%= booking.total_price.to_i.to_s(:delimited) %></strong> for <%= (booking.end_date - booking.start_date).to_i %> nights
-        </div>
-        <div class="dates">
-          from <strong><%= booking.start_date %></strong> to <strong><%= booking.end_date %></strong>
-        </div>
-      </div>
-    </div>
-  <% end %>
+  </div>
 </div>

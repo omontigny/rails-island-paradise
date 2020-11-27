@@ -196,5 +196,11 @@ fourthb.island = shelterIsland # Owner Mickael
 fourthb.save!
 puts "Booking #{fourthb.id} created"
 
+fifthb = Booking.new(start_date: "23/08/2021", end_date: "31/08/2021", nb_travelers: 5, total_price: 2700)
+fifthb.renter = kevin
+fifthb.island = narval # owner Coralie
+fifthb.save!
+puts "Booking #{fifthb.id} created"
+
 
 puts "Seeds Done 👍"

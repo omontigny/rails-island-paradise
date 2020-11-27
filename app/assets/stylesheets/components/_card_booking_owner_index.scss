@@ -9,12 +9,20 @@
   margin-bottom:30px;
   margin-left: 30px;
   border-radius:2px;
+  position: relative;
 
   img {
     height: 100%;
     width: 300px;
     object-fit: cover;
     padding: 5px;
+  }
+
+  .validation {
+    position: absolute;
+    right: 20px;
+    bottom: 30px;
+    width: 50px;
   }
 
   .island_name {
@@ -77,8 +85,8 @@
   .btn-approved {
     border-radius: 50%;
     color: white;
-    background-color: #D2F0CD;
-    border: 1px solid #D2F0CD;
+    background-color: #bcefb3;
+    border: 1px solid #bcefb3;
     margin: 10px;
     padding: 6px 10px 6px 10px;
   }
@@ -92,8 +100,8 @@
   .btn-declined {
     border-radius: 50%;
     color: white;
-    background-color: #FADFE0;
-    border: 1px solid #FADFE0;
+    background-color: #f9c2c4;
+    border: 1px solid #f9c2c4;
     margin: 10px;
     padding: 6px 13px 6px 13px;
   }
