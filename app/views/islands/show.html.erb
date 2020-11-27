@@ -9,11 +9,12 @@
       <div class="col-lg-8 col-md-6 col-sm-12">
         <div class="show-description">
         <p><%= @island.description %></p>
-        <p>Price : <%= @island.price_per_day %> / Day</p>
+        <p>Price : $<%= @island.price_per_day.to_i.to_s(:delimited) %> / Day</p>
         <p>Housing : <%= @island.capacity %></p>
         <p>Country : <%= @island.country %></p>
         <p>Ocean : <%= @island.ocean %></p>
         <p>Shark: <%= @island.shark %></p>
+         <p>Owner: <%= @island.owner.first_name %></p>
         <!-- <div id="price_per_day" data-price="<%= @island.price_per_day %>">
         <h4>Just $<%= @island.price_per_day.to_i.to_s(:delimited)  %>/day</h4>
  -->

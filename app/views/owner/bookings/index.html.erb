@@ -3,7 +3,7 @@
 <div class="container_home"></div>
   <%= link_to "Back", root_path, class: "btn btn-ghost" %>
   <br>
-  <div style="height:60vh">
+  <div style="min-height:60vh">
   <h1 class="text-center">My Reservations</h1>
   <% @bookings_pending.each do |booking| %>
     <div class="card-product-owner">
@@ -38,6 +38,7 @@
   <% end %>
 
 
+
   <% @bookings_accepted.each do |booking| %>
     <div class="card-product-owner">
       <%= cl_image_tag booking.island.picture.key %>
@@ -57,6 +58,7 @@
       </div>
     </div>
   <% end %>
+
 
   <% @bookings_refused.each do |booking| %>
     <div class="card-product-owner">
