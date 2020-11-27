@@ -1,9 +1,10 @@
 <!-- My Islands -->
-<div class="space" style="height:50px"></div>
+<!-- <div class="space" style="height:50px"></div> -->
 <div class="container_home">
-<h1>My Island(s)</h1>
-<%= link_to "Back", root_path, class: "btn btn-ghost" %>
-<br>
+  <h1>My Island(s)</h1>
+  <div class="back-button">
+    <%= link_to "Back", root_path, class: "btn btn-ghost" %>
+  </div>
   <% if @islands.empty?  %>
     You have <%= @islands.count %> Islands please create one <br>
     <%= link_to "~ ADD ~ Your Island", new_owner_island_path, class: "btn btn-ghost" %>
@@ -19,11 +20,11 @@
 
             <%= cl_image_tag island.picture.key, class: "index-island-image" %>
 
-<!--             <%= link_to owner_island_path(island) do %>
+<!--              <%= link_to owner_island_path(island) do %>
             <i id="pen" class="card-category-icon fa fa-pen"></i>
             <% end %>
 
-            <%= link_to islands_path(island),
+            <%= link_to owner_islands_path(island),
               method: :delete,
               data: { confirm: "Are you sure?" } do %>
               <i class="card-category-icon fas fa-trash-alt"></i>

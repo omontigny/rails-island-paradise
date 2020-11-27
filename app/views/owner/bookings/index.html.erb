@@ -2,7 +2,7 @@
 <div class="space" style="height:50px"></div>
   <%= link_to "Back", root_path, class: "btn btn-ghost" %>
   <br>
-  <div style="height:60vh">
+  <div style="min-height:60vh">
   <h1 class="text-center">My Reservations</h1>
   <div class="row">
     <div class="col-6">
@@ -77,6 +77,7 @@
               from <strong><%= booking.start_date %></strong> to <strong><%= booking.end_date %></strong>
             </div>
           </div>
+
         </div>
       <% end %>
     </div>

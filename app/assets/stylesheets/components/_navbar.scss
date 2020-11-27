@@ -1,68 +1,116 @@
-.navbar_home {
-  //background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://source.unsplash.com/featured/?island,paradise');
-  // overflow: hidden;
-  // background-color: #333;
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
-  width: 100%; /* Full width */
-  opacity: 0.8;
-  font-size: 30px;
-  background: $turquoise-transparent;
+// .navbar_home {
+//   //background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://source.unsplash.com/featured/?island,paradise');
+//   // overflow: hidden;
+//   // background-color: #333;
+//   // position: fixed; /* Set the navbar to fixed position */
+//   // top: 0; /* Position the navbar at the top of the page */
+//   width: 100%; /* Full width */
+//   //opacity: 0.8;
+//   font-size: 30px;
+//   background: $turquoise-transparent;
+//   justify-content: space-between;
+//   h2 {
+//       font: normal 28px 'Open Sans', cursive;
+//       font-weight: bold;
+//       //color: #7B6E6E;
+//       color: white;
+//   }
+//   .navbar-collapse {
+//     flex-grow: 0;
+//   }
+//   .navbar-brand img {
+//     width: 75px;
+//   }
+//   .nav-item .nav-link{
+//     //color: #6b5f5f;
+//     color: white;
+//   }
+// }
+
+// .navbar-logo{
+//   text-align: center;
+// }
+
+// TEST NAVBAR //
+
+
+
+.navbar-lewagon {
   justify-content: space-between;
-  h2 {
-      font: normal 28px 'Open Sans', cursive;
-      font-weight: bold;
-      //color: #7B6E6E;
-      color: white;
-  }
-  .navbar-collapse {
-    flex-grow: 0;
-  }
-  .navbar-brand img {
-    width: 75px;
-  }
+  // background: rgba(118, 242, 238, 0.1);
+  font-size: 24px; //enveloppe
+  // opacity: 0.8;
+  color: white;
+  background-color: transparent;
+  transition: 0.5s background-color ease;
+  //overflow: hidden;
+  width: 100vw;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+
   .nav-item .nav-link{
     //color: #6b5f5f;
     color: white;
   }
 }
 
-.navbar-logo{
-  text-align: center;
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+  }
+
+.navbar-lewagon .navbar-brand {
+  img {
+    width: 75px;
+  }
+
+  h2{
+      font: normal 30px 'Open Sans', cursive;
+      font-weight: bold;
+      //color: #7B6E6E;
+      color: white;
+  }
 }
 
-// TEST NAVBAR //
+.navbar-lewagon-white {
+  background-color: white;
+}
 
-// .home-banner {
-//   //background-image: url('TODO: A picture URL from unsplash.com!');
-//   background-size: cover;
-//   height: 50vh;
-//   color: #eee;
-//   text-align: center;
-//   padding-top: 40vh;
+.navbar-brand-white {
+  h2{
+    color: #7B6E6E !important;
+  }
+}
+
+.nav-item .nav-link-white i {
+    color: #6b5f5f !important;
+    //color: white;
+}
+
+.notification {
+  // background-color: #555;
+  color: #6b5f5f;
+  text-decoration: none;
+  padding: 15px 26px;
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+// .notification:hover {
+//   background: red;
 // }
 
-// .navbar-lewagon {
-//   justify-content: space-between;
-//   // background: rgba(118, 242, 238, 0.1);
-//   font-size: 24px;
-//   opacity: 0.8;
-//   background-color: transparent;
-//   transition: 0.5s background-color ease;
-//   overflow: hidden;
-//   //position: fixed;
-//   //top: 0;
-// }
+.notification .badge {
+  position: absolute;
+  top: 14px;
+  right: 9px;
+  padding: 2px 5px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+  font-weight: 400;
+  font-size: 50%;
+}
 
-// .navbar-lewagon-white {
-//   background-color: transparent;
-// }
-
-
-// .navbar-lewagon .navbar-collapse {
-//   flex-grow: 0;
-//   }
-
-// .navbar-lewagon .navbar-brand img {
-//   width: 75px;
-// }

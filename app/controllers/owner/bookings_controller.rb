@@ -1,6 +1,7 @@
 class Owner::BookingsController < ApplicationController
   # All my bookings
   def index
+
     @bookings_pending = current_user.reservations.order(:status, :start_date).where(status: "pending")
     @bookings_accepted = current_user.reservations.order(:status, :start_date).where(status: "accepted")
     @bookings_refused = current_user.reservations.order(:status, :start_date).where(status: "refused")
