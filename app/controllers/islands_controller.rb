@@ -2,15 +2,21 @@ class IslandsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @islands = Island.geocoded.order(:name)
-    # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
-    @markers = @islands.map do |island|
-      {
-        lat: island.latitude,
-        lng: island.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { island: island }),
-        image_url: helpers.asset_url("map-marker.png")
-    }
+
+    if params[:query].present?
+      sql_query = "country ILIKE :query OR ocean ILIKE :query OR name ILIKE :query "
+      @islands = Island.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @islands = Island.geocoded.order(:name)
+      # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
+      @markers = @islands.map do |island|
+        {
+          lat: island.latitude,
+          lng: island.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { island: island }),
+          image_url: helpers.asset_url("map-marker.png")
+      }
+      end
     end
   end
 
