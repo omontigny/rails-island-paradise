@@ -20,8 +20,8 @@
         <%= link_to(owner_bookings_path, class: "nav-link notification") do %>
           <i class="fas fa-envelope-open-text"></i>&nbsp;
 
-          <% if current_user.islands.count > 0 && current_user.bookings.where(status: "pending").count > 0 %>
-            <span class="badge"><%= current_user.bookings.where(status: "pending").count %></span>
+          <% if current_user.islands.count > 0 && current_user.reservations.where(status: "pending").count > 0 %>
+            <span class="badge"><%= current_user.reservations.where(status: "pending").count %></span>
           <% end %>
         <% end %>
         </li>
