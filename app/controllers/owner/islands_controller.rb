@@ -29,14 +29,18 @@ class Owner::IslandsController < ApplicationController
     redirect_to owner_islands_path
   end
 
-  # def destroy
-  #   @island = Island.find(params[:id])
-  #   # @island = article.find(params[:id])
-  #   @island.destroy
-
-  #   # no need for app/views/restaurants/destroy.html.erb
-  #   redirect_to owner_islands_path
-  # end
+  def destroy
+    @islands = current_user.islands
+    @island = Island.find(params[:id])
+    if @island.bookings.empty?
+      @island.destroy
+      redirect_to owner_islands_path(@islands)
+    else
+      flash.alert = "You can't destroy this island is booked"
+      render "owner/islands/index"
+    end
+    # no need for app/views/restaurants/destroy.html.erb
+  end
 
   def island_params
     params.require(:island).permit(:country, :ocean, :location, :name, :picture, :price_per_day, :shark, :description, :picture)
