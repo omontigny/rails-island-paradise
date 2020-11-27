@@ -28,7 +28,7 @@ require("turbolinks").start()
 
 // External imports
 import "bootstrap";
-import "../plugins/flatpickr";
+import { initFlatpickr } from "../plugins/init_flatpickr";
 import "../plugins/moment";
 import { initMapbox } from '../plugins/init_mapbox';
 import { totalPriceCalculation } from '../components/total_price_calculation';
@@ -44,12 +44,13 @@ import { initUpdateNavbarOnScroll } from '../components/navbar';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initUpdateNavbarOnScroll();
+  initFlatpickr();
   initSelect2();
   const urlShow = 'mapbox://styles/oliver498/ckhzau3cc15if19pgo8k4tynm';
-  const urlIndex = 'mapbox://styles/oliver498/ckhxzcik207l119rzwfttqb5i';
+  const urlIndex = 'mapbox://styles/oliver498/ckhzau3cc15if19pgo8k4tynm';
   initMapbox('map-island-index',urlIndex,0,0,12);
   initMapbox('map-island-show',urlShow,2,0,10);
-  initFlatpickr();
+
   totalPriceCalculation();
 
 });
