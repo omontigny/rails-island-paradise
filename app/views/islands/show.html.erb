@@ -2,35 +2,60 @@
 <h1 class="text-center" style="color: white;"><%= @island.name %> </h1>
 </div>
 
+
+
+
+
 <div class="show_island">
   <%= link_to "Back", islands_path, class: "btn btn-ghost" %>
   <div class="container_home">
     <div class="row">
-      <div class="col-lg-8 col-md-6 col-sm-12">
-        <div class="show-description">
-        <p><%= @island.description %></p>
-        <p>Price : $<%= @island.price_per_day.to_i.to_s(:delimited) %> / Day</p>
-        <p>Housing : <%= @island.capacity %></p>
-        <p>Country : <%= @island.country %></p>
-        <p>Ocean : <%= @island.ocean %></p>
-        <p>Shark: <%= @island.shark %></p>
-         <p>Owner: <%= @island.owner.first_name %></p>
-        <!-- <div id="price_per_day" data-price="<%= @island.price_per_day %>">
-        <h4>Just $<%= @island.price_per_day.to_i.to_s(:delimited)  %>/day</h4>
- -->
 
-        <%= render "bookings/new", island: @island, booking: @booking %>
+      <div class="col-lg-6 col-sm-12">
+
+
+        <div class="show-description">
+          <p><%= @island.description %></p>
+
+          <div class="d-flex">
+            <div class="">
+
+            <p> $ <%= @island.price_per_day.to_i.to_s(:delimited) %> per day</p>
+
+            <p> <span><i class="fas fa-hotel"></i></span> <%=  @island.capacity %><span> Housing</span></p>
+
+            <p>Country : <%= @island.country %></p>
+
+            <p>Ocean : <%= @island.ocean %></p>
+
+
+
+             <p>Owner: <%= @island.owner.first_name %></p>
+
+             <% if @island.shark %>
+              <%= image_tag "layout/shark.png", class: "shark-image-show" %>
+            <% end %>
+
+          </div>
+
+          <div class="d-flex justify-content-end">
+            <%= render "bookings/new", island: @island, booking: @booking %>
+          </div>
+
+        </div>
       </div>
-      </div>
+    </div>
       <%# ------ %>
 
-      <div class="col-lg-4 col-md-6">
+      <div class="col-lg-4 col-sm-12">
         <div id="map-island-show"
-          style="width: 100%; height: 600px;"
+          style="width: 100%; height: 50vh;"
           data-markers="<%= @marker.to_json %>"
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>">
         </div>
       </div>
+
     </div>
   </div>
+</div>
 </div>

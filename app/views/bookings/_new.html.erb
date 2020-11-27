@@ -9,8 +9,9 @@
     <%= f.input :end_date, as: :string, required: false, html5: true, input_html: { id: "end_date_datepikr" } %>
     <%= f.input :nb_travelers %>
 
-    <p>Total: <span id="total_price"></span><span id="total_price_currency">$</span></p>
-    <%= f.submit "Book Now", class: "btn btn-booking" %>
+
+    <p><%= f.submit "Book Now", class: "btn btn-booking" %>  For: <span id="total_price"></span><span id="total_price_currency">$</span></p>
+
    <% end %>
 
 </div>
