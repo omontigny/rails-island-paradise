@@ -5,8 +5,8 @@
   <br>
   <div style="min-height:60vh">
   <h1 class="text-center">My Reservations</h1>
-  <% @reservations_pending.each do |booking| %>
-    <div class="card-product">
+  <% @bookings_pending.each do |booking| %>
+    <div class="card-product-owner">
       <%= cl_image_tag booking.island.picture.key %>
       <div class="card-product-infos">
           <span class="status_pending">
@@ -38,8 +38,9 @@
   <% end %>
 
 
-  <% @reservations_accepted.each do |booking| %>
-    <div class="card-product">
+
+  <% @bookings_accepted.each do |booking| %>
+    <div class="card-product-owner">
       <%= cl_image_tag booking.island.picture.key %>
       <div class="card-product-infos">
           <span class="status_accepted">
@@ -58,8 +59,9 @@
     </div>
   <% end %>
 
-  <% @reservations_refused.each do |booking| %>
-    <div class="card-product">
+
+  <% @bookings_refused.each do |booking| %>
+    <div class="card-product-owner">
       <%= cl_image_tag booking.island.picture.key %>
       <div class="card-product-infos">
           <span class="status_refused">
