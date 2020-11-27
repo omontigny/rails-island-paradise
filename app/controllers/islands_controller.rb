@@ -2,7 +2,7 @@ class IslandsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @islands = Island.geocoded
+    @islands = Island.geocoded.order(:name)
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @markers = @islands.map do |island|
       {
@@ -53,6 +53,15 @@ class IslandsController < ApplicationController
   #   @booking.island = @island
   #   @booking.save
   #   redirect_to bookings_path
+  # end
+
+  # def destroy
+  #   @island = Island.find(params[:id])
+  #   # @island = article.find(params[:id])
+  #   @island.destroy
+
+  #   # no need for app/views/restaurants/destroy.html.erb
+  #   redirect_to islands_path
   # end
 
   private

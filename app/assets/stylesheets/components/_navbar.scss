@@ -1,17 +1,19 @@
 .navbar_home {
+  //background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://source.unsplash.com/featured/?island,paradise');
   // overflow: hidden;
   // background-color: #333;
-  //position: fixed; /* Set the navbar to fixed position */
-  //top: 0; /* Position the navbar at the top of the page */
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
-  //opacity: 0.3;
+  opacity: 0.8;
   font-size: 30px;
   background: $turquoise-transparent;
   justify-content: space-between;
   h2 {
       font: normal 28px 'Open Sans', cursive;
       font-weight: bold;
-      color: #7B6E6E;
+      //color: #7B6E6E;
+      color: white;
   }
   .navbar-collapse {
     flex-grow: 0;
@@ -19,20 +21,43 @@
   .navbar-brand img {
     width: 75px;
   }
+  .nav-item .nav-link{
+    //color: #6b5f5f;
+    color: white;
+  }
 }
 
 .navbar-logo{
   text-align: center;
 }
 
+// TEST NAVBAR //
+
+// .home-banner {
+//   //background-image: url('TODO: A picture URL from unsplash.com!');
+//   background-size: cover;
+//   height: 50vh;
+//   color: #eee;
+//   text-align: center;
+//   padding-top: 40vh;
+// }
+
 // .navbar-lewagon {
-//   position: static;
-//   top: 0;
 //   justify-content: space-between;
 //   // background: rgba(118, 242, 238, 0.1);
 //   font-size: 24px;
 //   opacity: 0.8;
+//   background-color: transparent;
+//   transition: 0.5s background-color ease;
+//   overflow: hidden;
+//   //position: fixed;
+//   //top: 0;
 // }
+
+// .navbar-lewagon-white {
+//   background-color: transparent;
+// }
+
 
 // .navbar-lewagon .navbar-collapse {
 //   flex-grow: 0;

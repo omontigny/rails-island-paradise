@@ -8,18 +8,20 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+@import 'mapbox-gl/dist/mapbox-gl';
+@import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder';
+
+@import "flatpickr/dist/flatpickr";
+@import 'select2/dist/css/select2';
+
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
 
-@import 'mapbox-gl/dist/mapbox-gl';
-@import "flatpickr/dist/flatpickr";
-@import 'select2/dist/css/select2';
-
-
 /* In the "external libraries" section */
-// @import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder';
-@import "pages/index_booking";
+// @import "pages/index_booking";
+
+
 
 body{
   //background-image: linear-gradient(rgba(179, 242, 240, 0.2), rgba(255, 255, 255, 0.9)), url("layout/background_island.jpg");

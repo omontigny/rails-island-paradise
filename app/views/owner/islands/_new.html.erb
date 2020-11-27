@@ -3,12 +3,12 @@
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :ocean %>
-    <%= f.input :location %>
+    <%= f.input :location, :label => "Position",  input_html: { "data-tooltip" => true, :class => "has-tip", :title => "Please give " } %>
     <%= f.input :country, input_html: { class: 'select2' }%>
     <%= f.input :price_per_day %>
     <%= f.input :shark %>
     <%= f.input :picture %>
-    <%= f.submit "Add", class: "btn btn-ghost" %>
+    <%= f.submit "Add Your Island", class: "btn btn-add-island" %>
    <% end %>
 
 

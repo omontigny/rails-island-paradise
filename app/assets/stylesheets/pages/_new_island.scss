@@ -1,0 +1,26 @@
+.form_new_island {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 15px;
+  //border: 1px solid #c9c7c7;
+  background-color: #f9f7f7;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.btn-add-island {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 10px;
+  background: #71C8C1;
+  opacity: 0.8;
+  //transition: background 0.3s ease;
+}
+
+h1{
+  color: #6b5f5f;
+}

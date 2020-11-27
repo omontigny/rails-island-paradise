@@ -203,6 +203,7 @@
 
 .footer-distributed .footer-icons{
   margin-top: 25px;
+  color:  #92999f;
 }
 
 
@@ -224,7 +225,7 @@
 // }
 
 // Florent
-.footer-distributed .footer-icons a{
+.footer-distributed .footer-icons a i {
   display: inline-block;
   width: 35px;
   height: 35px;
@@ -234,6 +235,7 @@
 
   font-size: 28px;
   color: #33383b;
+  //color: black;
   text-align: center;
   line-height: 35px;
 
