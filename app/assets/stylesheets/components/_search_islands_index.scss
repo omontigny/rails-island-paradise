@@ -1,0 +1,23 @@
+
+.search {
+  width: 50%;
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.form-control {
+  height: 40px;
+  border-right: 1px solid grey;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.btn-search {
+  height: 40px;
+  width: 70px;
+  font-size: 15px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: grey;
+  border: 1px solid grey;
+}
