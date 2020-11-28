@@ -178,11 +178,11 @@ firstb.island = heart # owner coralie
 firstb.save!
 puts "Booking #{firstb.id} created"
 
-secondb = Booking.new(start_date: "13/07/2021", end_date: "20/07/2021", nb_travelers: 2, total_price: 490, status: "accepted")
-secondb.renter = olivier
-secondb.island = halfMoon # owner Mickael
-secondb.save!
-puts "Booking #{secondb.id} created"
+# secondb = Booking.new(start_date: "13/07/2021", end_date: "20/07/2021", nb_travelers: 2, total_price: 490, status: "accepted")
+# secondb.renter = olivier
+# secondb.island = halfMoon # owner Mickael
+# secondb.save!
+# puts "Booking #{secondb.id} created"
 
 thirdb = Booking.new(start_date: "23/08/2021", end_date: "31/08/2021", nb_travelers: 5, total_price: 2700)
 thirdb.renter = kevin
