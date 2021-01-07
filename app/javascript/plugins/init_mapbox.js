@@ -45,7 +45,11 @@ const initMapbox = (divName,styleUrl,zoom,minZoom,maxZoom) => {
   if (mapElement) { // only build a map if there's a div#map to inject into
     const map = buildMap(mapElement,`${divName}`,minZoom,maxZoom,styleUrl)
     map.addControl(new mapboxgl.NavigationControl()); // Add + / - controls to zoom
-    const markers = JSON.parse(mapElement.dataset.markers);
+    // const markers = JSON.parse(mapElement.dataset.markers);
+
+
+
+
     addMarkersToMap(map,markers);
     //const zoom = 0;
     fitMapToMarkers(map,markers,zoom);
@@ -59,8 +63,9 @@ const initMapbox = (divName,styleUrl,zoom,minZoom,maxZoom) => {
   //   const zoom = 3;
   //   fitMapToMarkers(mapShow,markersShow,zoom);
   // }
-
-
 };
+
+
+
 
 export { initMapbox };

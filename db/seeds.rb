@@ -172,7 +172,7 @@ puts "Island #{narval.name} created"
 # puts "Island #{macdo.name} created"
 
 
-firstb = Booking.new(start_date: "13/03/2021", end_date: "20/03/2021", nb_travelers: 3, total_price: 1400, status: "refused")
+firstb = Booking.new(start_date: "13/03/2021", end_date: "20/03/2021", nb_travelers: 3, total_price: 245_000, status: "refused")
 firstb.renter = kevin
 firstb.island = heart # owner coralie
 firstb.save!
@@ -184,7 +184,7 @@ puts "Booking #{firstb.id} created"
 # secondb.save!
 # puts "Booking #{secondb.id} created"
 
-thirdb = Booking.new(start_date: "23/08/2021", end_date: "31/08/2021", nb_travelers: 5, total_price: 2700)
+thirdb = Booking.new(start_date: "23/08/2021", end_date: "31/08/2021", nb_travelers: 5, total_price: 560_000)
 thirdb.renter = kevin
 thirdb.island = narval # owner Coralie
 thirdb.save!
