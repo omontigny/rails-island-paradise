@@ -1,4 +1,3 @@
 {"apps":[
-  //{"app_id":"app_273d13c4-fbca-41cc-9c16-4ad18a675c5b","org_id":"user_b8e3d81b-03a0-4ddc-8e39-93b0f6fb21f7","deploy_url":"https://push-par-clevercloud-customers.services.clever-cloud.com/app_273d13c4-fbca-41cc-9c16-4ad18a675c5b.git","name":"mister-cocktail","alias":"mister-cocktail"},
   {"app_id":"app_94f2167a-158d-4846-b3e0-80fcb0b3aa0d","org_id":"user_b8e3d81b-03a0-4ddc-8e39-93b0f6fb21f7","deploy_url":"https://push-par-clevercloud-customers.services.clever-cloud.com/app_94f2167a-158d-4846-b3e0-80fcb0b3aa0d.git","name":"island-paradise","alias":"island-paradise"}
 ]}
