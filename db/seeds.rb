@@ -172,31 +172,31 @@ puts "Island #{narval.name} created"
 # puts "Island #{macdo.name} created"
 
 
-firstb = Booking.new(start_date: "13/03/2021", end_date: "20/03/2021", nb_travelers: 3, total_price: 245_000, status: "refused")
+firstb = Booking.new(start_date: "13/03/2022", end_date: "20/03/2022", nb_travelers: 3, total_price: 245_000, status: "refused")
 firstb.renter = kevin
 firstb.island = heart # owner coralie
 firstb.save!
 puts "Booking #{firstb.id} created"
 
-# secondb = Booking.new(start_date: "13/07/2021", end_date: "20/07/2021", nb_travelers: 2, total_price: 490, status: "accepted")
+# secondb = Booking.new(start_date: "13/07/2022", end_date: "20/07/2022", nb_travelers: 2, total_price: 490, status: "accepted")
 # secondb.renter = olivier
 # secondb.island = halfMoon # owner Mickael
 # secondb.save!
 # puts "Booking #{secondb.id} created"
 
-thirdb = Booking.new(start_date: "23/08/2021", end_date: "31/08/2021", nb_travelers: 5, total_price: 560_000)
+thirdb = Booking.new(start_date: "23/08/2022", end_date: "31/08/2022", nb_travelers: 5, total_price: 560_000)
 thirdb.renter = kevin
 thirdb.island = narval # owner Coralie
 thirdb.save!
 puts "Booking #{thirdb.id} created"
 
-fourthb = Booking.new(start_date: "25/01/2021", end_date: "28/01/2021", nb_travelers: 4, total_price: 700)
+fourthb = Booking.new(start_date: "25/01/2022", end_date: "28/01/2022", nb_travelers: 4, total_price: 700)
 fourthb.renter = kevin
 fourthb.island = shelterIsland # Owner Mickael
 fourthb.save!
 puts "Booking #{fourthb.id} created"
 
-fifthb = Booking.new(start_date: "23/08/2021", end_date: "31/08/2021", nb_travelers: 5, total_price: 2700)
+fifthb = Booking.new(start_date: "23/08/2022", end_date: "31/08/2022", nb_travelers: 5, total_price: 2700)
 fifthb.renter = kevin
 fifthb.island = narval # owner Coralie
 fifthb.save!
