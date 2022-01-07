@@ -34,7 +34,7 @@ user3.save!
 puts "User #{user3.first_name} created"
 
 user4  = User.new(first_name: 'user4', last_name: 'name4', email: 'user4.name4@islandparadise.com', password: 'password456')
-file = File.open(Rails.root.join('db/fixtures/avatars/user4.jpg'))
+file = File.open(Rails.root.join('db/fixtures/avatars/user4.png'))
 user4.avatar.attach(io: file, filename: 'user4.jpg', content_type: 'image/jpg')
 user4.save!
 puts "User #{user4.first_name} created"
