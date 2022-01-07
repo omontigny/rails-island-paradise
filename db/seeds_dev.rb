@@ -14,37 +14,58 @@ puts "Island cleaned"
 User.destroy_all
 puts "Users cleaned"
 
+
+# User 1 - Owner
+# Email : coraliedelhommeau@gmail.com
+# Password : secret123
+# User 2 – renter
+# Email : mickael.occelli@gmail.com
+# Password : topsecret
+# User3 - renter
+# Email : kev.scelles@gmail.com
+# Password : azerty
+# User4 -renter
+# Email : olivier.wagon498@free.fr
+# Password : password
+
+# User 5 – Owner
+# Email : secretuser1@gmail.com
+# Password : secret1
+# User 6 – Owner
+# Email : secretuser2@gmail.com
+# Password : secret2
+
 # Users
-user1  = User.new(first_name: 'user1', last_name: 'name1', email: 'user1.name1@islandparadise.com', password: 'secret123')
-file = File.open(Rails.root.join('db/fixtures/avatars/user1.jpg'))
-user1.avatar.attach(io: file, filename: 'user1.jpg', content_type: 'image/jpg')
-user1.save!
-puts "User #{user1.first_name} created"
+coralie  = User.new(first_name: 'Coralie', last_name: 'Delhommeau', email: 'coraliedelhommeau@gmail.com', password: 'secret123')
+file = File.open(Rails.root.join('db/fixtures/avatars/dev/cdelhommeau.jpg'))
+coralie.avatar.attach(io: file, filename: 'cdelhommeau.jpg', content_type: 'image/jpg')
+coralie.save!
+puts "User #{coralie.first_name} created"
 
-user2  = User.new(first_name: 'user2', last_name: 'name2', email: 'user2.name2@islandparadise.com', password: 'topsecret')
-file = File.open(Rails.root.join('db/fixtures/avatars/user2.jpg'))
-user2.avatar.attach(io: file, filename: 'user2.jpg', content_type: 'image/jpg')
-user2.save!
-puts "User #{user2.first_name} created"
+mickael  = User.new(first_name: 'Mickael', last_name: 'Occelli', email: 'mickael.occelli@gmail.com', password: 'topsecret')
+file = File.open(Rails.root.join('db/fixtures/avatars/dev/moccelli.jpg'))
+mickael.avatar.attach(io: file, filename: 'moccelli.jpg', content_type: 'image/jpg')
+mickael.save!
+puts "User #{mickael.first_name} created"
 
-user3  = User.new(first_name: 'user3', last_name: 'name3', email: 'user3.name3@islandparadise.com', password: 'azerty123')
-file = File.open(Rails.root.join('db/fixtures/avatars/user3.jpg'))
-user3.avatar.attach(io: file, filename: 'user3.jpg', content_type: 'image/jpg')
-user3.save!
-puts "User #{user3.first_name} created"
+kevin  = User.new(first_name: 'Kevin', last_name: 'Scelles', email: 'kev.scelles@gmail.com', password: 'azerty123')
+file = File.open(Rails.root.join('db/fixtures/avatars/dev/kscelles.jpg'))
+kevin.avatar.attach(io: file, filename: 'kscelles.jpg', content_type: 'image/jpg')
+kevin.save!
+puts "User #{kevin.first_name} created"
 
-user4  = User.new(first_name: 'user4', last_name: 'name4', email: 'user4.name4@islandparadise.com', password: 'password456')
-file = File.open(Rails.root.join('db/fixtures/avatars/user4.jpg'))
-user4.avatar.attach(io: file, filename: 'user4.jpg', content_type: 'image/jpg')
-user4.save!
-puts "User #{user4.first_name} created"
+olivier  = User.new(first_name: 'Olivier', last_name: 'Montigny', email: 'olivier.wagon498@free.fr', password: 'password456')
+file = File.open(Rails.root.join('db/fixtures/avatars/dev/omontigny.jpg'))
+olivier.avatar.attach(io: file, filename: 'omontigny.jpg', content_type: 'image/jpg')
+olivier.save!
+puts "User #{olivier.first_name} created"
 
 # Islands
 # Heart-shaped Island : Fiji (-17.858052,177.20179) Atlantic Ocean
 heart = Island.new(name: "Heart Island", location: 'Heart Island fidji', description: "Beautiful island in shape of heart in Fidji. Perfect for honeymoon.", capacity: 3, ocean: "Atlantic Ocean", country: "Fidji", price_per_day: 35_000, shark: true)
 file = File.open(Rails.root.join('db/fixtures/islands/heart.jpg'))
 heart.picture.attach(io: file, filename: 'heart.jpg', content_type: 'image/jpg')
-heart.owner = user1
+heart.owner = coralie
 heart.save!
 puts "Island #{heart.name} created"
 
@@ -54,7 +75,7 @@ rangyai = Island.new(name: "Ko Rang Yai Island", location: 'Ko Rang Yai Island',
 file = File.open(Rails.root.join('db/fixtures/islands/rangyai.jpg'))
 rangyai.picture.attach(io: file, filename: 'rangyai.jpg', content_type: 'image/jpg')
 # rangyai.location('Ko Rang Yai Island')
-rangyai.owner = user3
+rangyai.owner = kevin
 rangyai.save!
 puts "Island #{rangyai.name} created"
 
@@ -64,7 +85,7 @@ shelterIsland = Island.new(name: "Shelter Island Castle", location: 'Lake County
 file = File.open(Rails.root.join('db/fixtures/islands/shelterIsland.jpg'))
 shelterIsland.picture.attach(io: file, filename: 'shelterIsland.jpg', content_type: 'image/jpg')
 # shelterIsland.location('Lake County, Montana')
-shelterIsland.owner = user2
+shelterIsland.owner = mickael
 shelterIsland.save!
 puts "Island #{shelterIsland.name} created"
 
@@ -74,7 +95,7 @@ whitsunday = Island.new(name: "whitsunday Islands", location: 'whitsunday-island
 file = File.open(Rails.root.join('db/fixtures/islands/whitsunday.jpg'))
 whitsunday.picture.attach(io: file, filename: 'whitsunday.jpg', content_type: 'image/jpg')
 # whitsunday.location('whitsunday-islands')
-whitsunday.owner = user2
+whitsunday.owner = mickael
 whitsunday.save!
 puts "Island #{whitsunday.name} created"
 
@@ -84,7 +105,7 @@ blueIsland = Island.new(name: "Blue Island", location: 'Bozine Town Road, Bahama
 file = File.open(Rails.root.join('db/fixtures/islands/blueIsland.jpg'))
 blueIsland.picture.attach(io: file, filename: 'blueIsland.jpg', content_type: 'image/jpg')
 # blueIsland.location('Bozine Town Road, Bahamas')
-blueIsland.owner = user1
+blueIsland.owner = coralie
 blueIsland.save!
 puts "Island #{blueIsland.name} created"
 
@@ -94,7 +115,7 @@ halfMoon = Island.new(name: "Half Moon Cay", location: 'Half Moon Cay, Cat Islan
 file = File.open(Rails.root.join('db/fixtures/islands/halfMoon.jpg'))
 halfMoon.picture.attach(io: file, filename: 'halfMoon.jpg', content_type: 'image/jpg')
 # halfMoon.location('Half Moon Cay, Cat Island, Bahamas')
-halfMoon.owner = user2
+halfMoon.owner = mickael
 halfMoon.save!
 puts "Island #{halfMoon.name} created"
 
@@ -104,80 +125,80 @@ roc = Island.new(name: "The Roc", location: 'porquerolles, france', description:
 file = File.open(Rails.root.join('db/fixtures/islands/roc.jpg'))
 roc.picture.attach(io: file, filename: 'roc.jpg', content_type: 'image/jpg')
 # halfMoon.location('Half Moon Cay, Cat Island, Bahamas')
-roc.owner = user1
+roc.owner = coralie
 roc.save!
 puts "Island #{roc.name} created"
 
 # maple = Island.new(name: "Maple", description: "Perfect island for camping lovers and people who love the watch birds. You'll see it is the most quit place on earth.", capacity: 4, ocean: "Atlantic ocean", country: "Canada", price_per_day: 120, shark: false)
 # file = File.open(Rails.root.join('db/fixtures/islands/maple.jpg'))
 # maple.picture.attach(io: file, filename: 'roc.jpg', content_type: 'maple/jpg')
-# maple.owner = user2
+# maple.owner = mickael
 # maple.save!
 # puts "Island #{maple.name} created"
 
 hygge = Island.new(name: "Hygge", location: 'Ile of Paques', description: "If you love to meditate, this island if for you. The sunrise is absolutely gorgeous and will allow you to find the peace your searching for.", capacity: 4, ocean: "Norway sea", country: "Norway", price_per_day: 18_750, shark: false)
 file = File.open(Rails.root.join('db/fixtures/islands/hygge.jpg'))
 hygge.picture.attach(io: file, filename: 'hygge.jpg', content_type: 'hygge/jpg')
-hygge.owner = user2
+hygge.owner = mickael
 hygge.save!
 puts "Island #{hygge.name} created"
 
 # ko = Island.new(name: "Ko Yao Noi", description: "Perfect spot for family or friend holidays. The island is spacious and is full of activities to do. Moreover the island is seperated in two by a sand strip. It is great to isolate yourself and preserve privacy when you travel with a group." , capacity: 8, ocean: "Indian ocean", country: "Thailand", price_per_day: 300, shark: true)
 # file = File.open(Rails.root.join('db/fixtures/islands/ko.jpg'))
 # ko.picture.attach(io: file, filename: 'ko.jpg', content_type: 'ko/jpg')
-# ko.owner = user2
+# ko.owner = mickael
 # ko.save!
 # puts "Island #{ko.name} created"
 
 narval = Island.new(name: "Narval", location: 'Pasyon Seychelles', description: "You want to live the best holiday ever ? Come to the Narval Island. The beaches are beautiful and the water is always warm.  You won't have a day without sun. It is the perfect place for pure leasure and relaxation." , capacity: 5, ocean: "Carribean sea", country: "Seychelles", price_per_day: 72_000, shark: true)
 file = File.open(Rails.root.join('db/fixtures/islands/narval.jpg'))
 narval.picture.attach(io: file, filename: 'narval.jpg', content_type: 'narval/jpg')
-narval.owner = user1
+narval.owner = coralie
 narval.save!
 puts "Island #{narval.name} created"
 
 # winty = Island.new(name: "Winty", description: "Winty is an world-famous island to admire whales. So take your binoculars and a coat (because it freezing) and come to discover natural beauties.", capacity: 2, ocean: "Groenland sea", country: "Groenland", price_per_day: 150, shark: false)
 # file = File.open(Rails.root.join('db/fixtures/islands/winty.jpg'))
 # winty.picture.attach(io: file, filename: 'winty.jpg', content_type: 'winty/jpg')
-# winty.owner = user2
+# winty.owner = mickael
 # winty.save!
 # puts "Island #{winty.name} created"
 
 # macdo = Island.new(name: "MacDonney Island", description: "The MacDonney Island is a well furnished island. Indeed you will also have access to the haunted castle present on the island. Thrill and adventure guaranteed !", capacity: 5, ocean: "North sea", country: "Scotland", price_per_day: 175, shark: false)
 # file = File.open(Rails.root.join('db/fixtures/islands/macdo.jpg'))
 # macdo.picture.attach(io: file, filename: 'macdo.jpg', content_type: 'macdo/jpg')
-# macdo.owner = user1
+# macdo.owner = coralie
 # macdo.save!
 # puts "Island #{macdo.name} created"
 
 
 firstb = Booking.new(start_date: "13/03/2022", end_date: "20/03/2022", nb_travelers: 3, total_price: 245_000, status: "refused")
-firstb.renter = user3
-firstb.island = heart # owner user1
+firstb.renter = kevin
+firstb.island = heart # owner coralie
 firstb.save!
 puts "Booking #{firstb.id} created"
 
 # secondb = Booking.new(start_date: "13/07/2022", end_date: "20/07/2022", nb_travelers: 2, total_price: 490, status: "accepted")
-# secondb.renter = user4
-# secondb.island = halfMoon # owner user2
+# secondb.renter = olivier
+# secondb.island = halfMoon # owner Mickael
 # secondb.save!
 # puts "Booking #{secondb.id} created"
 
 thirdb = Booking.new(start_date: "23/08/2022", end_date: "31/08/2022", nb_travelers: 5, total_price: 560_000)
-thirdb.renter = user3
-thirdb.island = narval # owner user1
+thirdb.renter = kevin
+thirdb.island = narval # owner Coralie
 thirdb.save!
 puts "Booking #{thirdb.id} created"
 
 fourthb = Booking.new(start_date: "25/01/2022", end_date: "28/01/2022", nb_travelers: 4, total_price: 700)
-fourthb.renter = user3
-fourthb.island = shelterIsland # Owner user2
+fourthb.renter = kevin
+fourthb.island = shelterIsland # Owner Mickael
 fourthb.save!
 puts "Booking #{fourthb.id} created"
 
 fifthb = Booking.new(start_date: "23/08/2022", end_date: "31/08/2022", nb_travelers: 5, total_price: 2700)
-fifthb.renter = user3
-fifthb.island = narval # owner user1
+fifthb.renter = kevin
+fifthb.island = narval # owner Coralie
 fifthb.save!
 puts "Booking #{fifthb.id} created"
 

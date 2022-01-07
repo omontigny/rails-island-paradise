@@ -9,7 +9,7 @@ class IslandsController < ApplicationController
     else
       @islands = Island.geocoded.order(:name)
       # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
-      @markers = @islands.map do |island|
+      @markers = @islands.geocoded.map do |island|
         {
           lat: island.latitude,
           lng: island.longitude,

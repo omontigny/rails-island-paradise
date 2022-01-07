@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "@mapbox/mapbox-gl-geocoder": "^4.7.0",
+    "@popperjs/core": "^2.10.1",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
@@ -10,7 +11,7 @@
     "bootstrap": "^4.5.3",
     "flatpickr": "^4.6.6",
     "jquery": "^3.5.1",
-    "mapbox-gl": "^1.13.0",
+    "mapbox-gl": "^2.4.1",
     "moment": "^2.29.1",
     "places.js": "^1.19.0",
     "popper.js": "^1.16.1",
@@ -19,6 +20,6 @@
   },
   "version": "0.1.0",
   "devDependencies": {
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^4.2.1"
   }
 }
