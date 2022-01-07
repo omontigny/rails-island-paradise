@@ -38,8 +38,8 @@ yarn-debug.log*
 # Ignore .env file containing credentials.
 .env*
 # Ignore perso seeds
-/dev/seeds_dev.rb
-/db/fixtures/avatars/dev/
+/db/seeds/development.rb
+/db/fixtures/avatars/development/
 # Ignore Mac and Linux file system files
 *.swp
 .DS_Store

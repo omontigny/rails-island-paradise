@@ -80,4 +80,5 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV['POSTGRESQL_ADDON_URI'] %>
+  # url: <%= ENV['POSTGRESQL_ADDON_URI'] %>
+  database: rails_island_paradise_production
