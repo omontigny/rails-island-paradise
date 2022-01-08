@@ -18,7 +18,7 @@ rails db:seed
 ## Ruby Gem
 Here it is the list of Gems used in this project
 ### Standard Ruby on Rails Gem
-* pg
+* gem 'pg', '1.1'
 * gem 'puma', '~> 4.1'
 * gem 'sass-rails', '>= 6'
 * gem 'webpacker', '~> 4.0'
