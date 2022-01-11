@@ -47,7 +47,7 @@ Here it is the list of Gems used in this project
 
 ## Screeshots
 
-![Capture d’écran 2022-01-07 à 13 28 17](https://user-images.githubusercontent.com/17742618/148544484-f773dc62-0337-44c0-ac20-008e0adce5d2.png)
+![homepage](doc/img/IslandParadise_capture.jpg)
 
 
 ## Credits
